@@ -1,19 +1,31 @@
 <template>
   <div id="pageIndex">
     <com-topNav></com-topNav>
-
-  </div>
+      <full-page :options="options">
+        <!-- 第一屏 -->
+        <com-screen-index></com-screen-index>
+    </full-page>
+  </div>  
 </template>
 <script>
-let comTopNav = () => import('../components/topNav.vue');
+import FullPage from "vue-fullpage.js";
+
+let comTopNav = () => import("../components/topNav.vue");
+let comScreenIndex = () => import("../components/screenIndex.vue");
 export default {
   name: "pageIndex",
   data() {
-    return {}
+    return {
+      options: {
+        paddingTop: "30px"
+      }
+    };
   },
   methods: {},
-  components:{
-    'com-topNav':comTopNav,
+  components: {
+    "com-topNav": comTopNav,
+    "com-screen-index": comScreenIndex,
+    FullPage
   }
 };
 </script>
