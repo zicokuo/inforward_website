@@ -10,6 +10,8 @@ import 'animate.css'
 import MuseUI from 'muse-ui'
 import 'muse-ui/dist/muse-ui.css'
 import '@/components/jquery.vender.js'
+
+import ImageHelper from '@/components/img.vender.js'
 //  window
 
 //  Vue
@@ -27,3 +29,5 @@ new Vue({
   },
   template: '<App/>'
 })
+
+window.$imageHelper = ImageHelper

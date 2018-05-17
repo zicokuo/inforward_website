@@ -10,11 +10,10 @@
   </div>
 </template>
 <script>
-
 let comTopNav = () => import("@/pages/components/topNav.vue");
 // 加载页面
 let comScreenIndex = () => import("@/pages/components/screenIndex.vue");
-
+import FullPage from "vue-fullpage";
 export default {
   name: "pageIndex",
   data() {
