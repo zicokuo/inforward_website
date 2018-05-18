@@ -13,7 +13,6 @@
         </mu-flexbox>
       </mu-flexbox-item>
       <mu-flexbox-item :grow="3">
-
       </mu-flexbox-item>
       <mu-flexbox-item style="max-width:300px">
         <mu-flexbox>
@@ -53,6 +52,11 @@ export default {
   position: fixed;
   width: 100%;
   z-index: 1300;
+  background: rgba(255, 255, 255, 0.1);
+  transition: all 2s;
+  &:hover {
+    background: rgba(255, 255, 255, 0.7);
+  }
 }
 
 .topNav {
