@@ -8,8 +8,8 @@ import store from './store'
 import 'animate.css'
 //  muse-ui
 import MuseUI from 'muse-ui'
-import 'muse-ui/dist/muse-ui.css'
 import '@/components/jquery.vender.js'
+import 'muse-ui/dist/muse-ui.css'
 
 import ImageHelper from '@/components/img.vender.js'
 //  window
@@ -17,7 +17,8 @@ import ImageHelper from '@/components/img.vender.js'
 //  Vue
 Vue.use(MuseUI)
 Vue.config.productionTip = false
-
+import KsVueFullpage from 'ks-vue-fullpage'
+Vue.use(KsVueFullpage)
 /* eslint-disable no-new */
 
 new Vue({

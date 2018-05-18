@@ -3,14 +3,14 @@
     <!-- 企业logo -->
     <mu-flexbox class="topNav">
       <mu-flexbox-item class="inforward-logo">
-         <mu-flexbox gutter="50">
-<mu-flexbox-item>
-        <img class="adaptive-imgs" src="@/assets/imgs/logo.png" />
-</mu-flexbox-item>
-<mu-flexbox-item> 
-        <img class="adaptive-imgs" src="@/assets/imgs/menu.png" />
-</mu-flexbox-item>
-         </mu-flexbox>
+        <mu-flexbox :gutter="100">
+          <mu-flexbox-item>
+            <img class="adaptive-imgs" src="@/assets/imgs/logo.png" />
+          </mu-flexbox-item>
+          <mu-flexbox-item>
+            <img class="adaptive-imgs" src="@/assets/imgs/menu.png" />
+          </mu-flexbox-item>
+        </mu-flexbox>
       </mu-flexbox-item>
       <mu-flexbox-item :grow="3">
 
@@ -18,7 +18,7 @@
       <mu-flexbox-item style="max-width:300px">
         <mu-flexbox>
           <mu-flexbox-item v-for="( nav , index ) in rightNavs" :key="index">
-            <a href="" :title="nav.tips"><img class="nav-icon" :src="nav.imgSrc" /></a>       
+            <a href="" :title="nav.tips"><img class="nav-icon" :src="nav.imgSrc" /></a>
           </mu-flexbox-item>
         </mu-flexbox>
       </mu-flexbox-item>
