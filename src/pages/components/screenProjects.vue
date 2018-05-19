@@ -1,7 +1,7 @@
 <template>
   <div id="screenProjects" class="section" :style=sectionStyle>
     <mu-flexbox>
-      <mu-flexbox-item justify="center" align="center">
+      <mu-flexbox-item justify="center" align="center" style="padding:2%">
         <div class="bannar-title">
           Projects
         </div>
@@ -13,8 +13,8 @@
     <mu-flexbox style="margin:7em 0">
       <mu-flexbox-item>
         <swiper :options="swiperOption">
-          <swiper-slide v-for="(p,i) in projects" :key="i">
-            <mu-card>
+          <swiper-slide v-for="(p,i) in projects" :key="i" style="width:514px;height:595px;">
+            <mu-card style="height:595px;">
               <mu-card-media>
                 <img :src="p.imgSrc" />
               </mu-card-media>
@@ -22,11 +22,11 @@
               <mu-card-text>
                 {{p.summary}}
               </mu-card-text>
-              <mu-card-actions>
-                <mu-flat-button icon="eye">
+              <mu-card-actions class="absolute" style="width:100%;bottom:0;">
+                <mu-flat-button icon="remove_red_eye">
                   {{p.views}}
                 </mu-flat-button>
-                <mu-flat-button icon="right">Reed More</mu-flat-button>
+                <mu-flat-button style="float:right" primary icon="chevron_right">Reed More</mu-flat-button>
               </mu-card-actions>
             </mu-card>
           </swiper-slide>
@@ -84,8 +84,8 @@ export default {
       },
       swiperOption: {
         slidesPerView: 4,
-        spaceBetween: 30,
-        slidesPerGroup: 2,
+        spaceBetween: 50,
+        slidesPerGroup: 1,
         loop: true,
         loopFillGroupWithBlank: true,
         // pagination: {
@@ -124,8 +124,17 @@ export default {
   }
   & .project {
     &-title {
-      & .mu-card-title {
-        color: #ac9143;
+      & .mu {
+        &-card {
+          &-title {
+            color: #eeba30;
+            font-weight: 900;
+            text-align: center;
+          }
+          &-text{
+            text-indent: 2em;
+          }
+        }
       }
     }
   }

@@ -18,6 +18,9 @@
       <swiper-slide>
         <com-screen-map></com-screen-map>
       </swiper-slide>
+      <swiper-slide>
+        <com-footer></com-footer>
+      </swiper-slide>
       <!-- Optional controls -->
       <div class="swiper-pagination" slot="pagination"></div>
     </swiper>
@@ -31,6 +34,7 @@ let comScreenIndex = () => import("@/pages/components/screenIndex.vue");
 let comScreenAboutUs = () => import("@/pages/components/screenAboutUs.vue");
 let comScreenProjects = () => import("@/pages/components/screenProjects.vue");
 let comScreenMap = () => import("@/pages/components/screenMap.vue");
+let comFooter = () => import("@/pages/components/footer.vue");
 
 import { swiper, swiperSlide } from "vue-awesome-swiper";
 import "swiper/dist/css/swiper.css";
@@ -45,12 +49,17 @@ export default {
       swiperOption: {
         direction: "vertical",
         mousewheel: true,
-        // height: document.documentElement.clientHeight,
-        height: window.screen.availHeight,
+        height: document.documentElement.clientHeight,
+        // height: window.screen.,
         pagination: {
-            el: '.swiper-pagination',
-            clickable: true
-          }
+          el: ".swiper-pagination",
+          clickable: true
+        },
+        // slidesPerView: 'auto',
+        roundLengths: true, //防止文字模糊
+        nested: true,
+        parallax: true,
+        scrollbarDraggable: false
       }
     };
   },
@@ -65,7 +74,8 @@ export default {
     "com-screen-index": comScreenIndex,
     "com-screen-aboutus": comScreenAboutUs,
     "com-screen-projects": comScreenProjects,
-    "com-screen-map":comScreenMap,
+    "com-screen-map": comScreenMap,
+    "com-footer": comFooter
   }
 };
 </script>
@@ -85,6 +95,18 @@ export default {
 .standard {
   &-text {
     text-indent: 150%;
+  }
+}
+.full {
+  &-width {
+    width: 100%;
+  }
+  &-height {
+    height: 100%;
+  }
+  &-all {
+    width: 100%;
+    height: 100%;
   }
 }
 </style>

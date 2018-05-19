@@ -10,15 +10,12 @@ import 'animate.css'
 import MuseUI from 'muse-ui'
 import '@/components/jquery.vender.js'
 import 'muse-ui/dist/muse-ui.css'
-
 import ImageHelper from '@/components/img.vender.js'
 //  window
 
 //  Vue
 Vue.use(MuseUI)
 Vue.config.productionTip = false
-import KsVueFullpage from 'ks-vue-fullpage'
-Vue.use(KsVueFullpage)
 /* eslint-disable no-new */
 
 new Vue({
