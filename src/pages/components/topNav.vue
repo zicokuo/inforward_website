@@ -16,8 +16,8 @@
       </mu-flexbox-item>
       <mu-flexbox-item style="max-width:300px">
         <mu-flexbox>
-          <mu-flexbox-item v-for="( nav , index ) in rightNavs" :key="index">
-            <a href="" :title="nav.tips"><img class="nav-icon" :src="nav.imgSrc" /></a>
+          <mu-flexbox-item v-for="( e , i ) in rightNavs" :key="i">
+            <router-link :to="e.url" :title="e.tips"><img class="nav-icon" :src="e.imgSrc" /></router-link>
           </mu-flexbox-item>
         </mu-flexbox>
       </mu-flexbox-item>
@@ -30,11 +30,11 @@ let RightNavs = [
   {
     label: null,
     imgSrc: require("@/assets/imgs/search_btn.png"),
-    tips: "搜索"
+    tips: "搜索",url:''
   },
-  { label: null, imgSrc: require("@/assets/imgs/heart_btn.png"), tips: "喜欢" },
-  { label: null, imgSrc: require("@/assets/imgs/sms_btn.png"), tips: "评论" },
-  { label: null, imgSrc: require("@/assets/imgs/share_btn.png"), tips: "分享" }
+  { label: null, imgSrc: require("@/assets/imgs/heart_btn.png"), tips: "喜欢" ,url:''},
+  { label: null, imgSrc: require("@/assets/imgs/sms_btn.png"), tips: "评论" ,url:'/category/company_news'},
+  { label: null, imgSrc: require("@/assets/imgs/share_btn.png"), tips: "分享" ,url:''}
 ];
 
 export default {
@@ -65,7 +65,7 @@ export default {
   position: relative;
   & .nav {
     &-icon {
-      width: 2em;
+      width: 1.5em;
     }
   }
 }

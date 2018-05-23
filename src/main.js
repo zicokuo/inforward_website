@@ -10,8 +10,11 @@ import 'animate.css'
 import MuseUI from 'muse-ui'
 import '@/components/jquery.vender.js'
 import 'muse-ui/dist/muse-ui.css'
+import '../static/material-fonts/material-icons.css'
 import ImageHelper from '@/components/img.vender.js'
 //  window
+import ApiSimulation from '@/components/apiSimulation.js'
+window.$api = ApiSimulation
 
 //  Vue
 Vue.use(MuseUI)

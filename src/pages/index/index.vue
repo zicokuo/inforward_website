@@ -1,10 +1,8 @@
 <template>
 
-  <div id="pageIndex" style="width:100%;height:100%">
+  <div id="pageIndex">
     <com-topNav></com-topNav>
-    <!-- 第一屏 -->
-    <!-- 第二屏 -->
-    <swiper :options="swiperOption" ref="mySwiper" @someSwiperEvent="handleSwiperScroll">
+    <swiper :options="swiperOption" ref="screenPageSwiper" @someSwiperEvent="handleSwiperScroll">
       <!-- slides -->
       <swiper-slide>
         <com-screen-index></com-screen-index>
@@ -21,19 +19,20 @@
       <swiper-slide>
         <com-footer></com-footer>
       </swiper-slide>
+      <div class="swiper-scrollbar" slot="scrollbar"></div>
       <!-- Optional controls -->
-      <div class="swiper-pagination" slot="pagination"></div>
     </swiper>
+
   </div>
 </template>
 <script>
 let comTopNav = () => import("@/pages/components/topNav.vue");
 
 // 加载页面
-let comScreenIndex = () => import("@/pages/components/screenIndex.vue");
-let comScreenAboutUs = () => import("@/pages/components/screenAboutUs.vue");
-let comScreenProjects = () => import("@/pages/components/screenProjects.vue");
-let comScreenMap = () => import("@/pages/components/screenMap.vue");
+let comScreenIndex = () => import("./components/screenIndex.vue");
+let comScreenAboutUs = () => import("./components/screenAboutUs.vue");
+let comScreenProjects = () => import("./components/screenProjects.vue");
+let comScreenMap = () => import("./components/screenMap.vue");
 let comFooter = () => import("@/pages/components/footer.vue");
 
 import { swiper, swiperSlide } from "vue-awesome-swiper";
@@ -42,31 +41,30 @@ import "swiper/dist/css/swiper.css";
 export default {
   name: "pageIndex",
   data() {
+    let _this = this;
     return {
-      options: {
-        paddingTop: "30px"
-      },
       swiperOption: {
         direction: "vertical",
+        slidesPerView: "auto",
+        freeMode: true,
+        freeModeSticky: true,
         mousewheel: true,
-        height: document.documentElement.clientHeight,
-        // height: window.screen.,
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true
-        },
-        // slidesPerView: 'auto',
-        roundLengths: true, //防止文字模糊
-        nested: true,
         parallax: true,
-        scrollbarDraggable: false
+        scrollbar: {
+          el: ".swiper-scrollbar"
+        },
+        // nested: true,
+        roundLengths: true, //防止文字模糊,
       }
     };
   },
-  mounted() {},
+  mounted() {
+  },
   methods: {
     handleSwiperScroll: function() {}
   },
+  computed: {},
+  watch: {},
   components: {
     swiper,
     swiperSlide,

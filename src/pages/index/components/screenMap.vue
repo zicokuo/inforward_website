@@ -1,5 +1,5 @@
 <template>
-  <div id="screenMap" class="section" :style=sectionStyle>
+  <div id="screenMap" :style=sectionStyle>
     <mu-flexbox style="padding:4%;height:92%">
       <!-- 左侧swiper -->
       <mu-flexbox-item style="height:100%">
@@ -54,7 +54,6 @@
 <script>
 import Vue from "vue";
 import QRCode from "qrcode";
-import apiSimulation from "@/components/apiSimulation.js";
 import { swiper, swiperSlide } from "vue-awesome-swiper";
 let Projects = [];
 let MapPoints = [
@@ -77,7 +76,8 @@ export default {
       sectionStyle: {
         backgroundImage: "url(" + require("@/assets/imgs/page4map.png") + ")",
         backgroundRepeat: "no-repeat",
-        backgroundSize: "cover"
+        backgroundSize: "cover",
+        height: document.documentElement.clientHeight + "px"
       },
       topSignStyle: {
         backgroundImage:
@@ -111,7 +111,7 @@ export default {
         },
         on: {
           transitionEnd: function(swiper) {
-            let ai = this.activeIndex;
+            let ai = this.realIndex;
             _this.swiperActiveIndex = ai + 1;
           }
         }
@@ -130,7 +130,7 @@ export default {
         fontSize: "45px",
         color: "white",
         textShadow: "2px 2px 10px",
-        display:'flex'
+        display: "flex"
       },
       mapPointStyle: {
         backgroundImage: "url(" + require("@/assets/imgs/page4p2.png") + ")",
@@ -141,7 +141,7 @@ export default {
     };
   },
   mounted() {
-    let ProjectOrigin = apiSimulation.getMapProject();
+    let ProjectOrigin = window.$api.getMapProject();
     ProjectOrigin.map((p, i) => {
       QRCode.toDataURL("I am a pony!", function(err, url) {
         p.qrcode = url;
@@ -153,13 +153,12 @@ export default {
         position: "absolute",
         left: MapPoints[i].x / 1920 * 100 + "%",
         top: MapPoints[i].y / 1138 * 100 + "%",
-        cursor: "pointer",
-        
+        cursor: "pointer"
       };
     });
 
     this.projects = ProjectOrigin;
-    this.currentPoint = this.projects[0]
+    this.currentPoint = this.projects[0];
     this.swiperActiveIndex = 1;
   },
   methods: {

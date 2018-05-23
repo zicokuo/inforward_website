@@ -24,7 +24,7 @@ let autoFixImage = function (imgs, originWidth = originW, originHeight = originH
 let autoFixPosition = function (imgs, originWidth = originW, originHeight = originH) {
   let winWidth = document.documentElement.clientWidth
   // let winHeight = document.documentElement.clientHeight
-  let winHeight = $(window).height()
+  let winHeight = document.documentElement.clientHeight
   if (winWidth > originWidth || imgs.length < 1) {
     return
   }

@@ -1,19 +1,27 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+
+// 加载子路由
+import routerCategory from './pageRouter/category.js'
 // 加载page index
 const pageIndex = () =>
-  import('@/pages/index')
+  import ('@/pages/index')
+
+const routerDefault = {
+  //  默认路由 - 首页
+  path: '',
+  name: 'pageIndex',
+  component: pageIndex,
+  meta: {
+    title: '首页'
+  }
+}
 Vue.use(Router)
 const mainRouter = new Router({
-  routes: [{
-    mode: 'history',
-    path: '/',
-    name: 'pageIndex',
-    component: pageIndex,
-    meta: {
-      title: '首页'
-    }
-  }]
+  mode: 'history',
+  routes: [
+    routerCategory, routerDefault
+  ]
 })
 
 mainRouter.beforeEach((to, from, next) => {

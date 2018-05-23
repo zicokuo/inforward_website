@@ -8,16 +8,40 @@
         <img class="relative adaptive-imgs adaptive-items" :src="ball.imgSrc" :style="{'left':ball.x+'px','top':ball.y+'px'}" />
       </div>
     </div>
-    <div class="absolute adaptive-items" style="top:941px;left:900px">
+    <div class="absolute adaptive-items" style="top:895px;left:840px">
       <div class="title">Welcome to Inforward</div>
-      <div>
+      <div style="padding-top:2em">
         <img src="@/assets/imgs/downBtn.png" />
       </div>
+    </div>
+    <div style="background:white;width:100%;">
+      <mu-flexbox style="max-width:1000px;margin:auto" align="center" justify="center" class="indexLink">
+        <mu-flexbox-item v-for="(e,i) in indexLinks" :key="i" style="padding:1em;" align="center">
+          <mu-flat-button :to="e.url" :label="e.title" :style="e.style" class="flat-button" primary/>
+        </mu-flexbox-item>
+      </mu-flexbox>
     </div>
   </div>
 </template>
 
 <script>
+let indexLinks = [
+  {
+    title: "关于我们",
+    url: "",
+    style: { background:'url('+require("@/assets/imgs/rightBtn.png")+') no-repeat center left',height:'50px',paddingLeft:'2em',fontSize:'24px',color:'black'}
+  },
+  {
+    title: "我们的项目",
+    url: "",
+    style: { background:'url('+require("@/assets/imgs/rightBtn.png")+') no-repeat center left',height:'50px',paddingLeft:'2em',fontSize:'24px',color:'black'}
+  },
+  {
+    title: "联系我们",
+    url: "",
+    style: { background:'url('+require("@/assets/imgs/rightBtn.png")+') no-repeat center left',height:'50px',paddingLeft:'2em',fontSize:'24px',color:'black'}
+  }
+];
 let Balls = [
   { imgSrc: require("@/assets/imgs/ball3.png"), x: "-124", y: "268", z: "900" },
   { imgSrc: require("@/assets/imgs/ball2.png"), x: "1734", y: "579", z: "900" },
@@ -43,19 +67,28 @@ export default {
   data() {
     return {
       bg: screenIndexBg,
-      balls: Balls
+      balls: Balls,
+      indexLinks: indexLinks
     };
   },
   mounted() {
-    // this.$nextTick(() => {
+    this.$nextTick(() => {
+      let windowInit = function() {
+        window.$imageHelper.autoFixImage($(".adaptive-imgs"));
+        window.$imageHelper.autoFixPosition($(".adaptive-items"));
+      };
       $(function() {
         var scene = $("#screenIndex .parallaxLayer").get(0);
         var parallaxInstance = new Parallax(scene);
-        $("#screenIndex .parallaxLayer").height(document.documentElement.clientHeight);
-        window.$imageHelper.autoFixImage($(".adaptive-imgs"));
-        window.$imageHelper.autoFixPosition($(".adaptive-items"));
+        $("#screenIndex .parallaxLayer").height(
+          document.documentElement.clientHeight
+        );
+        windowInit();
+        $(window).resize(function() {
+          windowInit();
+        });
       });
-    // });
+    });
   }
 };
 </script>
@@ -72,8 +105,17 @@ export default {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    & .title {
-      font-size: 24px;
+  }
+  & .title {
+    font-size: 24px;
+  }
+  .flat-button {
+    font-size: 24px;
+    font-weight: 900;
+  }
+  & .indexLink{
+    .mu-flexbox-item{
+      
     }
   }
 }
