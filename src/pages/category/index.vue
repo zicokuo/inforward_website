@@ -7,7 +7,6 @@
   </div>
 </template>
 <script>
-
 const comTopNav = () => import("@/pages/components/topNav");
 const comFooter = () => import("@/pages/components/footer");
 
@@ -38,9 +37,8 @@ export default {
   }
   .cateBox {
     background: white;
-    // border: 1px solid #ddd;
     padding: 27px 79px;
-    & .title {
+    & > .title {
       border-bottom: 1px #ccc solid;
       text-align: center;
       position: relative;
@@ -63,6 +61,12 @@ export default {
         -webkit-background-clip: text;
         color: transparent;
       }
+    }
+    & > .description {
+      font-size: 30px;
+      font-weight: 900;
+      color:#333;
+      text-align: center
     }
     & .posts-list {
       padding-top: 3em;

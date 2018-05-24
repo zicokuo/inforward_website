@@ -18,32 +18,34 @@
                 </div>
                 <mu-flexbox class="posts-list" align="flex-start" :gutter="25">
                     <mu-flexbox-item>
-                        <div class="first-item">
+                        <router-link :to="posts[0].url" class="first-item posts-list-item">
                             <div class="thumb" :style="{backgroundImage:'url('+posts[0].thumb+')'}">
                             </div>
                             <div class="title">{{posts[0].title||'标题'}}</div>
                             <div class="description">{{posts[0].content||'内容'}}</div>
                             <br>
                             <mu-raised-button style="width:160px" class="readit" label="MORE +" backgroundColor="#ec805b" color="white" secondary/>
-                        </div>
+                        </router-link>
                     </mu-flexbox-item>
                     <mu-flexbox-item class="posts-list-date">
                         <mu-flexbox orient="vertical">
                             <mu-flexbox-item class="post-item" v-for="(e,i) in posts" :key="i" style="padding:1em 0;">
-                                <mu-flexbox>
-                                    <mu-flexbox-item justify="center" align="center">
-                                        <div class="day">{{e.date.slice(8,10)}}</div>
-                                        <div class="date">{{e.date.slice(0,7)}}</div>
-                                    </mu-flexbox-item>
-                                    <mu-flexbox-item grow="5">
-                                        <div class="title" style="line-height:2em;">
-                                            {{e.title}}
-                                        </div>
-                                        <div class="description">
-                                            {{e.content}}
-                                        </div>
-                                    </mu-flexbox-item>
-                                </mu-flexbox>
+                                <router-link :to="e.url" class="posts-list-item">
+                                    <mu-flexbox>
+                                        <mu-flexbox-item justify="center" align="center">
+                                            <div class="day">{{e.date.slice(8,10)}}</div>
+                                            <div class="date">{{e.date.slice(0,7)}}</div>
+                                        </mu-flexbox-item>
+                                        <mu-flexbox-item grow="5">
+                                            <div class="title" style="line-height:2em;">
+                                                {{e.title}}
+                                            </div>
+                                            <div class="description">
+                                                {{e.content}}
+                                            </div>
+                                        </mu-flexbox-item>
+                                    </mu-flexbox>
+                                </router-link>
                             </mu-flexbox-item>
                         </mu-flexbox>
                     </mu-flexbox-item>
@@ -57,9 +59,11 @@
                 </div>
                 <mu-flexbox class="posts-list posts-list-swiper" :gutter="50">
                     <mu-flexbox-item v-for="(e,i) in posts" :key="i">
-                        <div class="thumb" :style="{backgroundImage:'url('+e.thumb+')',width:'100%',height:'200px'}"></div>
-                        <div class="title">{{e.title}}</div>
-                        <div class="description">{{e.content}}</div>
+                        <router-link :to="e.url" class="posts-list-item">
+                            <div class="thumb" :style="{backgroundImage:'url('+e.thumb+')',width:'100%',height:'200px'}"></div>
+                            <div class="title">{{e.title}}</div>
+                            <div class="description">{{e.content}}</div>
+                        </router-link>
                     </mu-flexbox-item>
                 </mu-flexbox>
             </mu-flexbox-item>
@@ -71,17 +75,19 @@
                 </div>
                 <mu-flexbox class="posts-list posts-list-swiper" :gutter="50">
                     <mu-flexbox-item v-for="(e,i) in posts" :key="i">
-                        <div class="date-box">
-                            <div class="day">
-                                {{e.date.slice(8,10)}}
+                        <router-link :to="e.url" class="posts-list-item">
+                            <div class="date-box">
+                                <div class="day">
+                                    {{e.date.slice(8,10)}}
+                                </div>
+                                <div class="date">
+                                    {{e.date.slice(0,7)}}
+                                </div>
                             </div>
-                            <div class="date">
-                                {{e.date.slice(0,7)}}
-                            </div>
-                        </div>
-                        <div class="thumb" :style="{backgroundImage:'url('+e.thumb+')',width:'100%',height:'200px'}"></div>
-                        <div class="title">{{e.title}}</div>
-                        <div class="description">{{e.content}}</div>
+                            <div class="thumb" :style="{backgroundImage:'url('+e.thumb+')',width:'100%',height:'200px'}"></div>
+                            <div class="title">{{e.title}}</div>
+                            <div class="description">{{e.content}}</div>
+                        </router-link>
                     </mu-flexbox-item>
                 </mu-flexbox>
             </mu-flexbox-item>
@@ -111,7 +117,8 @@ export default {
     "com-bread-crumb": () => import("@/pages/components/breadcrumb.vue")
   },
   created() {
-    this.posts = window.$api.getPosts();
+    let posts = window.$helper.url.buildPostsUrl(window.$api.getPosts());
+    this.posts = posts;
   }
 };
 </script>
@@ -127,18 +134,34 @@ export default {
   & .date {
     color: #ccc;
   }
-  & .posts-list-swiper {
-    & .date-box{
+  @keyframes up10 {
+    0% {
+    }
+    100% {
+      transform: translateY(-5px);
+    //   box-shadow: 0 0 5px #ddd;
+    }
+  }
+  & .posts-list {
+    &-item {
+      display: block;
+      &:hover {
+        animation: up10 0.5s alternate forwards;
+      }
+    }
+    &-swiper {
+      & .date-box {
         background: #eeba30;
         text-align: center;
         position: absolute;
         padding: 0.5em;
-        & *{
-            color: white;
+        & * {
+          color: white;
         }
-        & .day{
-            font-size:33px;
+        & .day {
+          font-size: 33px;
         }
+      }
     }
   }
 }

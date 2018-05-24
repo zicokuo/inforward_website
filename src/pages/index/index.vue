@@ -79,32 +79,6 @@ export default {
 </script>
 
 <style lang="scss">
-.relative {
-  position: relative !important;
-}
-.absolute {
-  position: absolute !important;
-}
-.section {
-  @extend .relative;
-  width: 100%;
-  height: 100%;
-}
-.standard {
-  &-text {
-    text-indent: 150%;
-  }
-}
-.full {
-  &-width {
-    width: 100%;
-  }
-  &-height {
-    height: 100%;
-  }
-  &-all {
-    width: 100%;
-    height: 100%;
-  }
-}
+
+
 </style>

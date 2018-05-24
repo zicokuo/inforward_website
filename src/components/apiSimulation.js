@@ -30,6 +30,7 @@ let getProjects = function (num = 10) {
   return projects
 }
 
+//  地图项目swiper数据
 const getMapProject = function () {
   let projects = [{
       imgSrc: require('@/assets/imgs/project1.png'),
@@ -66,9 +67,9 @@ const getMapProject = function () {
   return projects
 }
 
-const getPosts = function () {
-
-  return [{
+//  获取多个文章数据
+const getPosts = function (num = 3) {
+  let originPosts = [{
       title: '成功推出四押一租全新租赁模式1',
       date: '2018-05-21',
       content: '由经过联合信用评级的融资性担保公司对众筹发起企业进行再次审核，办理优良资产抵押（如房产、汽车等），并严格控制抵押率。',
@@ -87,6 +88,12 @@ const getPosts = function () {
       thumb: require('@/assets/imgs/category/p3.png')
     }
   ]
+  let posts = []
+  for (let i = 0; i < num; i++) {
+    let index = i%3;
+    posts.push(originPosts[index])
+  }
+  return posts
 }
 
 const apiSimulation = {

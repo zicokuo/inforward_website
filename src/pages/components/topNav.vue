@@ -32,7 +32,7 @@ let RightNavs = [
     imgSrc: require("@/assets/imgs/search_btn.png"),
     tips: "搜索",url:''
   },
-  { label: null, imgSrc: require("@/assets/imgs/heart_btn.png"), tips: "喜欢" ,url:''},
+  { label: null, imgSrc: require("@/assets/imgs/heart_btn.png"), tips: "喜欢" ,url:'/category/activity'},
   { label: null, imgSrc: require("@/assets/imgs/sms_btn.png"), tips: "评论" ,url:'/category/company_news'},
   { label: null, imgSrc: require("@/assets/imgs/share_btn.png"), tips: "分享" ,url:''}
 ];

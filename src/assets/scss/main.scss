@@ -1,0 +1,62 @@
+@charset "uft-8";
+@import './post';
+#app {
+  font-family: 'Lantinghei SC', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+.img {
+  &-box {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    &.cover {
+      background-size: cover
+    }
+    &.contain {
+      background-size: contain;
+    }
+  }
+}
+
+.flex {
+  display: flex;
+  &.col {
+    flex-direction: column
+  }
+  &.row {
+    flex-direction: row
+  }
+}
+
+.full {
+  &-width {
+    width: 100%;
+  }
+  &-height {
+    height: 100%;
+  }
+  &-all {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.relative {
+  position: relative !important;
+}
+
+.absolute {
+  position: absolute !important;
+}
+
+.section {
+  @extend .relative;
+  width: 100%;
+  height: 100%;
+}
+
+.standard {
+  &-text {
+    text-indent: 150%;
+  }
+}

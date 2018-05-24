@@ -86,6 +86,7 @@ export default {
         slidesPerView: 4,
         spaceBetween: 50,
         slidesPerGroup: 1,
+        // slidesPerColumn:2,
         loop: true,
         loopFillGroupWithBlank: true,
         navigation: {
