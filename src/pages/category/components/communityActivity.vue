@@ -25,7 +25,6 @@
                 <mu-flexbox>
                     <mu-flexbox-item style="width:50%">
                         <div class="posts-list activity" style="padding:3em;">
-
                             <div class="title">{{posts[0].title}}</div>
                             <div class="description">{{posts[0].content}}</div>
                         </div>

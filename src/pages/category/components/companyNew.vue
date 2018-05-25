@@ -8,7 +8,7 @@
         <mu-flexbox orient="vertical" style="background:#f8f5f6;padding-top:3em;" :gutter="50">
             <!-- 面包屑 -->
             <mu-flexbox-item class="" style="background:none;width:1360px;">
-                <com-bread-crumb></com-bread-crumb>
+                <com-bread-crumb sep=">"></com-bread-crumb>
             </mu-flexbox-item>
             <!-- 集团要闻 -->
             <mu-flexbox-item class="cateBox" style="width:1360px;">
@@ -77,12 +77,8 @@
                     <mu-flexbox-item v-for="(e,i) in posts" :key="i">
                         <router-link :to="e.url" class="posts-list-item">
                             <div class="date-box">
-                                <div class="day">
-                                    {{e.date.slice(8,10)}}
-                                </div>
-                                <div class="date">
-                                    {{e.date.slice(0,7)}}
-                                </div>
+                                <div class="day">{{e.date.slice(8,10)}}</div>
+                                <div class="date">{{e.date.slice(0,7)}}</div>
                             </div>
                             <div class="thumb" :style="{backgroundImage:'url('+e.thumb+')',width:'100%',height:'200px'}"></div>
                             <div class="title">{{e.title}}</div>
