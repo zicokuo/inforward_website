@@ -145,3 +145,15 @@ export default {
   }
 }
 </style>
+<style spoced>
+.swiper-button-next{
+    background-image:none;
+    right: 24px;
+    top: 53%;
+}
+.swiper-button-prev{
+    background-image: none;
+    left:24px;
+    top: 53%;
+}
+</style>

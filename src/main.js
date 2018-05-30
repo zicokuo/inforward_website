@@ -14,7 +14,7 @@ import '../static/material-fonts/material-icons.css'
 import '@/assets/scss/main.scss'
 
 import ImageHelper from '@/components/img.vender.js'
-//  window
+//  windowƒ
 import ApiSimulation from '@/components/apiSimulation.js'
 import Helper from '@/components/helper'
 window.$api = ApiSimulation

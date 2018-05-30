@@ -3,6 +3,7 @@ import Router from 'vue-router'
 
 // 加载子路由
 import routerCategory from './pageRouter/category.js'
+import routerhtyf from './pageRouter/htyf.js'
 // 加载page index
 const pageIndex = () =>
   import ('@/pages/index')
@@ -20,7 +21,7 @@ Vue.use(Router)
 const mainRouter = new Router({
   mode: 'history',
   routes: [
-    routerCategory, routerDefault
+    routerCategory, routerDefault, routerhtyf
   ]
 })
 
