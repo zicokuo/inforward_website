@@ -91,6 +91,7 @@ input{border:none;outline: none;}
         font-size:16px;
         box-sizing: border-box;
         padding: 10px;
+        float: left;
     }
     button{
         width: 160px;
@@ -102,6 +103,7 @@ input{border:none;outline: none;}
         height:66px;
         border:none;
         outline: none;
+        box-sizing:border-box;
         background:-webkit-linear-gradient(left,#388cd8,#5c41a0)
     }
 }
@@ -130,16 +132,23 @@ main{
         margin-right: 55px;
         margin-bottom:109px;
         position:relative;
-        >img{display: block;}
+        overflow:hidden;
+        width: 287px;
+        >img{
+            display: block;
+            width: 287px;
+            height: 226px;
+        }
         >div{
             padding:20px;
         flex-grow:1;
+        
         }
         
         p{
             color:#343434;
             margin-bottom: 13px;
-
+            font-size:18px;
         }
         span{
             color:#979797;
@@ -154,6 +163,14 @@ main{
             left: 20px;
             
         }
+        // &:hover .zhezhao{
+        //     &::before{
+        //         left:-50%;
+        //     }
+        //     &::after{
+        //         right:-50%;
+        //     }
+        //  }
     }
 }
 .content_img2{
@@ -198,4 +215,41 @@ main{
     li:nth-of-type(2){
         margin:0 57px;
     }
+}
+*{
+    box-sizing:content-box;
+}
+.zhezhao{
+    
+    &::before{
+        width: 50%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.2);
+        display: block;
+        content: " ";
+        position: absolute;
+        transition: all .5s;
+        left: 0;
+        top: 0;
+     }
+     &::after{
+        width: 50%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.2);
+        display: block;
+        content: " ";
+        position: absolute;
+        transition: all .5s;
+        right: 0;
+        top: 0;
+     }
+     
+}
+.delzhezhao{
+    &::before{
+            left:-50%;
+        }
+        &::after{
+            right:-50%;
+        }
 }

@@ -4,24 +4,45 @@ import Router from 'vue-router'
 // 加载子路由
 import routerCategory from './pageRouter/category.js'
 import routerhtyf from './pageRouter/htyf.js'
+import routerCommunity from './pageRouter/community.js'
+import routerPages from './pageRouter/routerPages.js'
 // 加载page index
 const pageIndex = () =>
-  import ('@/pages/index')
+  import('@/pages/index')
+const pageResidence = () =>
+  import('@/pages/category/components/residence.vue')
 
 const routerDefault = {
   //  默认路由 - 首页
-  path: '',
+  path: '/',
   name: 'pageIndex',
-  component: pageIndex,
+  component: { template: '<router-view/>' },
   meta: {
     title: '首页'
-  }
+  },
+  children: routerPages
+  // children: [{
+  //   path: 'pageResidence',
+  //   name: 'pageResidence',
+  //   component: pageResidence,
+  //   meta: {
+  //     title: '搜索'
+  //   }
+  // }, {
+  //   path: '',
+  //   name: 'pageIndex',
+  //   component: pageIndex,
+  //   meta: {
+  //     title: '官网首页'
+  //   }
+  // }]
 }
 Vue.use(Router)
 const mainRouter = new Router({
   mode: 'history',
   routes: [
-    routerCategory, routerDefault, routerhtyf
+    routerCategory, routerDefault, routerhtyf, routerCommunity
+    // routerCategory, routerDefault, routerhtyf, routerCommunity, routerPages
   ]
 })
 
@@ -34,5 +55,5 @@ mainRouter.beforeEach((to, from, next) => {
   next()
 })
 
-mainRouter.afterEach(transition => {})
+mainRouter.afterEach(transition => { })
 export default mainRouter

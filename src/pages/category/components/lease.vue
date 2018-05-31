@@ -76,11 +76,13 @@
 <style scoped src="@/assets/pulice/css/pulice.css"></style>-->
 <style scoped src="@/assets/css/lease.scss" lang="scss" type="text/css"></style>
 <script>
-import comHeadder from "./pulice/header.vue";
+const comHeader = () => import("@/pages/components/header.vue");
+import "@/assets/js/jquery-2.1.1.min.js";
+import "@/assets/js/index.js";
 
 export default {
     components:{
-'com-header':comHeadder
+'com-header':comHeader
     //     slot2: {
     //     template: '<button>'+
     //                     '<slot name="name1"></slot>'+
