@@ -7,7 +7,7 @@ const pageResidence = () =>
 const pageIndex = () =>
   import('@/pages/index')
 const pageRouter = [{
-  //  社区
+  //  业务
   path: '/lease',
   name: 'category page',
   component: pageCate,
@@ -15,7 +15,7 @@ const pageRouter = [{
     title: '盈泰永富业务'
   },
   children: [{
-    //  公益事业
+    //  办公室租赁
     path: '/lease',
     name: 'group benefit',
     component: pageLease,
@@ -24,15 +24,16 @@ const pageRouter = [{
     }
   }]
 }, {
-  path: '/pageResidence',
+//  搜索办公租赁
+  path: '/residence',
   name: 'pageResidence',
   component: pageCate,
   meta: {
     title: '搜索办公租赁'
   },
   children: [{
-    //  公益事业
-    path: '/pageResidence',
+    
+    path: '/residence',
     name: 'group benefit',
     component: pageResidence,
     meta: {

@@ -121,7 +121,14 @@ export default {
         handleScroll:() => {
             let scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
             let zhezhao1 = document.getElementsByClassName('zhezhao')
-           
+           for(let i=0;i<zhezhao1.length;i++){
+               if(scrollTop > 860){
+                   zhezhao1[i].className = 'zhezhao delzhezhao'
+               }else{
+                   zhezhao1[i].className = 'zhezhao'
+               }
+               
+           }
             
             // scrollTop > 860 ? zhezhao.className += ' delzhezhao' : '';
         }

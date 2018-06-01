@@ -1,0 +1,21 @@
+@charset "uft-8";
+
+// 框架样式
+
+.inforward{
+    &-grid{
+        width:100%;
+        @for $i from 1 through 6 {
+            &-#{$i}{
+                & .grid{
+margin: auto;
+text-align:center;
+                    width: 100% / $i;
+                    &>div{
+                        display: inline-block;
+                    }
+                }
+            }
+        }
+    }
+}

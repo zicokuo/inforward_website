@@ -28,5 +28,7 @@ main{width:100%;position:relative;background:#f8f5f6;}
 .pop_div{float: left;width:680px;}
 .pop_div>p{font-size:17px;line-height:3;}
 .jsqiu{position: absolute;    left: 400px;    top: -40px;}
-.yuanbtn{position:absolute;    right: -30px;top: -30px;display:block;cursor: pointer;}
-
+.yuanbtn{position:absolute;    right: -30px;top: -30px;display:block;cursor: pointer;transition:all .2s;}
+.yuanbtn:hover{
+    transform: rotate(360deg);
+}

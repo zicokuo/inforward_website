@@ -3,7 +3,7 @@ import Router from 'vue-router'
 
 // 加载子路由
 import routerCategory from './pageRouter/category.js'
-import routerhtyf from './pageRouter/htyf.js'
+import routerhtyf from './pageRouter/inforward.js'
 import routerCommunity from './pageRouter/community.js'
 import routerPages from './pageRouter/routerPages.js'
 // 加载page index

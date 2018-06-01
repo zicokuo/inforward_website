@@ -5,7 +5,7 @@ ul{margin:0;padding:0;}
 .tit h2{background: -o-linear-gradient(left top, #3478c2 20%,#843a9d , #5b0877);background: -moz-linear-gradient(left top, #3478c2 20%,#843a9d , #5b0877);background: -webkit-linear-gradient(left top, #3478c2 20%,#843a9d , #5b0877);  -webkit-text-fill-color: transparent;-webkit-background-clip: text;-moz-text-fill-color: transparent;-moz-background-clip: text;-o-text-fill-color: transparent;-o-background-clip: text;display: inline-block;margin-bottom: 20px;   }
 .tit h2::after{width:60px;position:absolute;bottom:0;content:'';display:block;background:-webkit-linear-gradient(left,#4e5fe2,#7e3c9e);right: 0;left:0;height:3px;
     margin: 0 auto;  }
-.rezhao:hover{background:rgba(98, 161, 233, 0.5);transition:all 0.5s;color:#fff !important;}
+.rezhao:hover{background:rgb(107, 108, 185);transition:all 0.5s;color:#fff !important;}
 .titblock{display: inline-block;}
 .section_p{font-size:27px;color:#292929;text-align:center;letter-spacing: 2px;line-height:2;margin-bottom:40px;}
 .section_ul{display:flex;flex-direction:row;flex-wrap:wrap;color:#292929;font-family: SimSun;font-size:0;margin-bottom:74px;position:relative;}

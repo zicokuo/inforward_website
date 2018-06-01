@@ -1,7 +1,7 @@
 const pageCate = () =>
   import ('@/pages/category/index.vue')
 const pageCateBenefit = () =>
-  import ('@/pages/category/components/benefit.vue')
+  import ('@/pages/category/components/communityBenefit.vue')
 // const pageCateIntroduce = () =>
 //   import ('@/pages/category/components/introduce.vue')
 const pageRouter = {
@@ -14,7 +14,7 @@ const pageRouter = {
   },
   children: [{
     //  公益事业
-    path: 'benefit',
+    path: 'public_good',
     name: 'group benefit',
     component: pageCateBenefit,
     meta: {

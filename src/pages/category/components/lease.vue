@@ -2,7 +2,7 @@
 
     <div>
        
-        <com-header :headerbj="require('@/assets/img/kongjian2_01.jpg')" >
+        <com-header :headerbj="require('@/assets/img/kongjian2_01.jpg')" style="background-position:center">
         
         <template slot="slot1">
              <div class="header_text">

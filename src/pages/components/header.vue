@@ -43,10 +43,10 @@
         </slot>
     </div>
 </template>
-<style src="@/assets/pulice/css/normalize.css"></style>
+<style src="@/assets/public/css/normalize.css"></style>
 <style src="@/assets/css/animate.css"></style>
-<style src="@/assets/pulice/css/pulice.css"></style>
-<style scoped src="@/assets/pulice/css/pulice.css"></style>
+<style src="@/assets/public/css/public.css"></style>
+<style scoped src="@/assets/public/css/public.css"></style>
 <script>
 export default {
     name:"headerModule",

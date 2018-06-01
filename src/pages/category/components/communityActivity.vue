@@ -68,9 +68,11 @@
                     <span>友情链接</span>
                     <div class="highlight"></div>
                 </div>
-                <mu-flexbox class="frendLinks" wrap>
-                    <mu-flexbox-item v-for="i in 12" :key="i" :class="'img-'+i" :style="{backgroundImage:'url('+require('@/assets/imgs/category/community/frendLinks-sprite.png')+')'}">
+                <mu-flexbox class="frendLinks inforward-grid inforward-grid-4" wrap="wrap">
+                    <div  v-for="i in 12" :key="i" class="grid">
+                    <mu-flexbox-item  :class="'img-'+i" :style="{backgroundImage:'url('+require('@/assets/imgs/category/community/frendLinks-sprite.png')+')'}">
                     </mu-flexbox-item>
+                    </div>
                 </mu-flexbox>
             </mu-flexbox-item>
         </mu-flexbox>
@@ -105,6 +107,9 @@ export default {
   },
   created() {
     this.posts = window.$helper.url.buildPostsUrl(window.$api.getPosts(20));
+    // console.log(this.posts);
+    
+    
   },
   components: {
     swiper,
@@ -139,7 +144,7 @@ export default {
         background-position-y: 0;
         background-repeat: 0;
         height: $size;
-        // width: 2 * $size;
+        width: 2 * $size;
       }
     }
   }
