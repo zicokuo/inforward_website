@@ -1,6 +1,8 @@
 <template>
     <div id="communityActivity">
-        <mu-flexbox class="img-box bannar" :style="{height:'350px',backgroundImage:'url('+require('@/assets/imgs/category/community/activity.png')+')'}" justify="center" align="center">
+        <com-header :headerbj="require('@/assets/imgs/category/community/activity.png')"></com-header>
+        <!-- <mu-flexbox class="img-box bannar" :style="{height:'350px',backgroundImage:'url('+require('@/assets/imgs/category/community/activity.png')+')'}" justify="center" align="center"> -->
+        <mu-flexbox>
             <mu-flexbox-item class="title">
                 <!-- OUR ACTI -->
             </mu-flexbox-item>
@@ -83,7 +85,9 @@
 import frendLinksSprite from "@/assets/imgs/category/community/frendLinks-sprite.png";
 import { swiper, swiperSlide } from "vue-awesome-swiper";
 import "swiper/dist/css/swiper.css";
+const comHeader = () => import("@/pages/components/header.vue");
 const comBreadCrumb = () => import("@/pages/components/breadcrumb.vue");
+import "@/assets/js/index.js";
 export default {
   name: "communityActivity",
   data() {
@@ -114,7 +118,8 @@ export default {
   components: {
     swiper,
     swiperSlide,
-    "com-bread-crumb": comBreadCrumb
+    "com-bread-crumb": comBreadCrumb,
+    "com-header":comHeader
   }
 };
 </script>
@@ -161,4 +166,12 @@ export default {
     left:24px;
     top: 53%;
 }
+.grid{
+    margin: auto;
+    text-align:center;
+    
+}
+.grid>div{
+        display: inline-block;
+    }
 </style>

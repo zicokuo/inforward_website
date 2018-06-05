@@ -48,6 +48,7 @@
 <style src="@/assets/public/css/public.css"></style>
 <style scoped src="@/assets/public/css/public.css"></style>
 <script>
+import "@/assets/js/index.js";
 export default {
     name:"headerModule",
     props:{

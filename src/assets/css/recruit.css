@@ -25,3 +25,12 @@ ul{margin:0;padding:0;}
 .ytyf_jtl,.ytyf_jtl2{left:0;border:none;outline:none;position: absolute;bottom: -20px;cursor: pointer;}
 .ytyf_jtr,.ytyf_jtr2{right:0;border:none;outline:none;position: absolute;bottom: -20px;cursor: pointer;}
 .section_ul2>img{bottom:0px;}
+
+/*内容列表*/
+.content_div{color:#292929;font-family: SimSun;font-size:0;margin-bottom:74px;position:relative;}
+.content_div p span:nth-of-type(odd){color:#34aceb;font-weight:200;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;display:inline-block;font-size:16px;width:98px;float:left;text-align:left;}
+.content_div p span:nth-of-type(even){color:#ea5413;font-size:16px;font-weight:200;}
+.content_div_d h5{    font-size: 16px;font-weight: 200;}
+.content_div_d{background:#fff;padding:40px 20px;background-color:#fff;}
+.content_div_d a{    border: 1px solid #ccc;outline: none;cursor: pointer;border-radius: 4px;font-size: 12px;padding: 6px 20px;color: #4783d8;font-weight: 200;display: inline-block;box-sizing: border-box;}
+.swiper-button-prev,.swiper-button-next{background-image:none;}

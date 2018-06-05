@@ -1,9 +1,7 @@
 <template>
   <div>
     <!-- <router-view></router-view> -->
-    <com-header>
-
-    </com-header>
+    <com-header></com-header>
     <main>
       <div class="content">
         <!-- <div class="xulie">
@@ -33,22 +31,7 @@
                   </p>
                   <a href="javascript:;" class="rezhao">更多热招职位 </a>
               </swiper-slide>
-
             </swiper>
-            <!-- 
-            <li>
-              <img src="@/assets/img/yfytlogo.png" alt="">
-              <h5>盈富永泰集团有限公司</h5>
-              <p class="section_ul_p1">
-                <span>品质总监高级专员</span>
-                <span>面议</span>
-              </p>
-              <p class="section_ul_p2">
-                <span>设计总监</span>
-                <span>30-50万</span>
-              </p>
-              <a href="javascript:;" class="rezhao">更多热招职位 </a>
-            </li> -->
             <div class="ytyf_jtl" slot="button-prev">
               <img src="@/assets/img/jtleft.png" alt="">
             </div>
@@ -57,49 +40,36 @@
               <img src="@/assets/img/jtright.png" alt="" >
             </div>
           </ul>
+          
           <div class="tit">
             <h2>我们的客户也在招贤纳士</h2>
           </div>
-          <ul class="section_ul section_ul2">
-            <swiper :options="swiperOption2" ref="mySwiper" @someSwiperEvent="callback">
-              <swiper-slide v-for="(e,i) in 12" :key="i+'p'" class="li">
-                  <img src="@/assets/img/yfytlogo.png" alt="">
-                  <h5>腾讯有限公司{{i+'p'}}</h5>
-                  <p class="section_ul_p1">
-                    <span>品质总监高级专员</span>
-                    <span>面议</span>
-                  </p>  
-                  <p class="section_ul_p2">
-                    <span>设计总监</span>
-                    <span>30-50万</span>
-                  </p>
-                  <a href="javascript:;" class="rezhao">更多热招职位 </a>
-              </swiper-slide>
-
-            </swiper>
-             <swiper :options="swiperOption2" ref="mySwiper" @someSwiperEvent="callback">
-              <swiper-slide v-for="(e,i) in 12" :key="i+'p'" class="li">
-                  <img src="@/assets/img/yfytlogo.png" alt="">
-                  <h5>腾讯有限公司{{i+'p'}}</h5>
-                  <p class="section_ul_p1">
-                    <span>品质总监高级专员</span>
-                    <span>面议</span>
-                  </p>  
-                  <p class="section_ul_p2">
-                    <span>设计总监</span>
-                    <span>30-50万</span>
-                  </p>
-                  <a href="javascript:;" class="rezhao">更多热招职位 </a>
-              </swiper-slide>
-
-            </swiper>
-            <div class="ytyf_jtl2" slot="button-prev">
-              <img src="@/assets/img/jtleft.png" alt="">
+          <div style="width:1400px;padding:0;border-radius:5px;" class="content_div">
+                <swiper :options="swiperOption3">
+                    <swiper-slide v-for="(p,i) in 24" :key="i">
+                        <div class="content_div_d">
+                             <img src="@/assets/img/yfytlogo.png" alt="">
+                            <h5>盈富永泰集团有限公司{{i}}</h5>
+                            <p class="section_ul_p1">
+                              <span>品质总监高级专员</span>
+                              <span>面议</span>
+                            </p>  
+                            <p class="section_ul_p2">
+                              <span>设计总监</span>
+                              <span>30-50万</span>
+                            </p>
+                            <a href="javascript:;" class="rezhao">更多热招职位 </a>
+                        </div>
+                    </swiper-slide>
+                    <div class="swiper-pagination" slot="pagination"></div>
+                    <div class="swiper-button-prev ytyf_jtl" slot="button-prev">
+                        <img src="@/assets/imgs/swiper-prev.png" alt="" style="    left: 0;position: absolute;top: 18px;">
+                    </div>
+                    <div class="swiper-button-next ytyf_jtr" slot="button-next">
+                        <img src="@/assets/imgs/swiper-next.png" alt="" style="    right: 0;position: absolute;top: 18px;">
+                    </div>
+                </swiper>
             </div>
-            <div class="ytyf_jtr2" slot="button-next">
-              <img src="@/assets/img/jtright.png" alt="" >
-            </div>
-          </ul>
           <div class="tit">
             <h2>友情链接</h2>
           </div>
@@ -111,15 +81,9 @@
     </main>
   </div>
 </template>
-<!--<style scoped src="@/assets/pulice/css/normalize.css"></style>
-<style scoped src="@/assets/css/animate.css"></style>
-<style scoped src="@/assets/pulice/css/pulice.css"></style>-->
 <style scoped src="swiper/dist/css/swiper.css"></style>
-
 <style scoped src="@/assets/css/recruit.css" type="text/css"></style>
 <script>
-// import "@/assets/pulice/css/normalize.css";
-// import "@/assets/css/animate.css";
 const comBreadCrumb = () => import('@/pages/components/breadcrumb.vue');
 const comHeader = () => import('@/pages/components/header.vue');
 
@@ -152,20 +116,19 @@ export default {
           prevEl: ".ytyf_jtr"
         }
         },
-        swiperOption2: {
-          slidesPerView: 5,//一行多少个
-        spaceBetween: 12,//距离多少
-        slidesPerGroup: 1,//点击出现多少个
-        slidesPerColumn:1,
-        slidesPerColumnFill: 'row',
-        autoHeight: true, 
-        loop: true,
-        // loopFillGroupWithBlank: true,
+        swiperOption3: {
+        direction: "horizontal",
+        slidesPerView: 5,
+        spaceBetween: 12,
+        slidesPerGroup: 2,
+        slidesPerColumn: 2,
+        slidersPerColumnFill: "row",
+        loopFillGroupWithBlank: true,
         navigation: {
-          nextEl: ".ytyf_jtl2",
-          prevEl: ".ytyf_jtr2"
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev"
         }
-        },
+      }
       }
     },
     computed: {
@@ -175,7 +138,6 @@ export default {
     },
     methods:{
       callback:function(){
-
       }
     },
     mounted() {
@@ -183,7 +145,7 @@ export default {
       // 然后你就可以使用当前上下文内的swiper对象去做你想做的事了
       // console.log('this is current swiper instance object', this.swiper)
       // this.swiper.slideTo(1, 1000, false)
-    }
+    },
     // name: "HelloWorld",
     // components: { 
     //   swiper,
@@ -195,10 +157,11 @@ export default {
     //     logoImg: null
     //   };
     // },
-    // created() {
-    //   this.logoImg = logoImg;
+    created() {
+      //this.logoImg = logoImg;
+      // this.dataList = window.$helper.url.buildPostsUrl(widdow.$api.getPosts())
     
-    // }
+    }
 };
 </script>
 

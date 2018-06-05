@@ -30,7 +30,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
       rewrites: [{
         from: /.*/,
         to: path.posix.join(config.dev.assetsPublicPath, 'index.html')
-      }, ],
+      },],
     },
     hot: true,
     contentBase: false, // since we use CopyWebpackPlugin.
@@ -47,7 +47,8 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     quiet: true, // necessary for FriendlyErrorsPlugin
     watchOptions: {
       poll: config.dev.poll,
-    }
+    },
+    useLocalIp: true
   },
   plugins: [
     new webpack.DefinePlugin({
@@ -68,7 +69,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
       to: config.dev.assetsSubDirectory,
       ignore: ['.*']
     }]),
-    
+
 
   ]
 })

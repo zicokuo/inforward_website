@@ -27,42 +27,13 @@
                 </section>
                 <div class="compnay clearfloat">
                     <ul class="clearfloat">
-                        <li>
-                            <img src="@/assets/img/haoshun.png" alt="">
+                        <li v-for="(index,i) in dataList" :key="i">
+                            <img :src="index.img" alt="">
                             <div class="compnayname">
-                                <p>SMART TECHNOLOGY</p>
-                                <p>盈泰永富灏顺物业管业有限公司</p>
+                                <p>{{ index.englishTit }}</p>
+                                <p>{{ index.tit }}</p>
                             </div>
                         </li>
-                        <li class="">
-                            <img src="@/assets/img/wangluo.png" alt="">
-                            <div class="compnayname">
-                                <p>NETWIRK SERVICE</p>
-                                <p>盈泰永富网络服务</p>
-                            </div>
-                        </li>
-                        <li class="">
-                            <img src="@/assets/img/haojing.png" alt="">
-                            <div class="compnayname">
-                                <p>PROPERTY</p>
-                                <p>灏璟物业</p>
-                            </div>
-                        </li>
-                        <li>
-                            <img src="@/assets/img/shangwu.png" alt="">
-                            <div class="compnayname">
-                                <p>PROPERTY</p>
-                                <p>盈泰永富商务服务中心</p>
-                            </div>
-                        </li>
-                        <li>
-                            <img src="@/assets/img/fangdichan.png" alt="">
-                            <div class="compnayname">
-                                <p>PROPERTY</p>
-                                <p>灏璟物业</p>
-                            </div>
-                        </li>
-                        <li></li>
                         <div class="pop clearfloat" id="pop">
                             <img src="@/assets/img/jieshaoqiu.png" class="jsqiu" alt="">
                             <img src="@/assets/img/haoshunbj.png" alt="" class="pop_bj">
@@ -87,10 +58,6 @@
 
 <style scoped src="@/assets/css/introduce.css"></style>
 <script>
-// import "@/assets/pulice/css/normalize.css";
-// import "@/assets/css/animate.css";
-// import "@/assets/pulice/css/pulice.css";
-// import "@/assets/css/introduce.css";
 const comHeader = () => import("@/pages/components/header.vue");
 const comBreadCrumb = () => import("@/pages/components/breadcrumb.vue");
 import "@/assets/js/jquery-2.1.1.min.js";
@@ -102,6 +69,13 @@ export default {
     return {
     //   msg: "Welcome to Your Vue.js App",
     //   logoImg: null
+        dataList:[
+            {img:require("@/assets/img/haoshun.png"),englishTit:"SMART TECHNOLOGY",tit:"盈富永泰灏顺物业管业有限公司"},
+            {img:require("@/assets/img/wangluo.png"),englishTit:"NETWIRK SERVICE",tit:"盈泰永富网络服务"},
+            {img:require("@/assets/img/haojing.png"),englishTit:"PROPERTY",tit:"灏璟物业"},
+            {img:require("@/assets/img/shangwu.png"),englishTit:"BUSINESS CENRE",tit:"盈泰永富商务服务中心"},
+            {img:require("@/assets/img/fangdichan.png"),englishTit:"REAL ESTATE",tit:"灏璟房地产"}
+        ]
     };
   },
   created() {

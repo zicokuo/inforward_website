@@ -30,11 +30,11 @@ let RightNavs = [
   {
     label: null,
     imgSrc: require("@/assets/imgs/search_btn.png"),
-    tips: "搜索",url:''
+    tips: "搜索",url:'/inforward/introduce'
   },
   { label: null, imgSrc: require("@/assets/imgs/heart_btn.png"), tips: "喜欢" ,url:'/category/activity'},
   { label: null, imgSrc: require("@/assets/imgs/sms_btn.png"), tips: "评论" ,url:'/category/company_news'},
-  { label: null, imgSrc: require("@/assets/imgs/share_btn.png"), tips: "分享" ,url:''}
+  { label: null, imgSrc: require("@/assets/imgs/share_btn.png"), tips: "分享" ,url:'/community/public_good'}
 ];
 
 export default {
@@ -54,6 +54,7 @@ export default {
   z-index: 1300;
   background: rgba(255, 255, 255, 0.1);
   transition: all 2s;
+  top:0;
   &:hover {
     background: rgba(255, 255, 255, 0.7);
   }
