@@ -16,7 +16,7 @@
                 </mu-flexbox-item>
             <img src="@/assets/img/titimg.png" alt="" style="margin:0 auto;display:block;">
             <section class="character">
-                <p>距今为止，我们的慈善机构已经有 <span id="personNum"></span> 人参与爱心捐款。<br>捐款金额达到：<span id="money" style="color:#ed4f34;"></span>元 人名币
+                <p>距今为止，我们的慈善机构已经有 <span id="personNum">{{ cishan }}</span> 人参与爱心捐款。<br>捐款金额达到：<span id="money" style="color:#ed4f34;">{{ juankuanNum }}</span>元 人名币
                 </p>
                 <p>在中国，还有数以千万计需要救助的贫困儿童，每年也还有新的脆弱儿童因家庭变故而陷入困境，他们有的甚至吃不饱饭、无人照顾。盈富永泰希望<br>能与更多的爱心人士奉献微薄之力，携手贫困留守儿童，用爱帮助更多贫困儿童得到更好的成长环境,改变未来.</p>
             </section>
@@ -75,9 +75,9 @@ export default {
             "com-bread-crumb":comBreadCrumb
     },
     created(){
-        console.log(this.$route.path)
-        console.log(this.cishan)
-        console.log($("#personNum"))
+        // console.log(this.$route.path)
+        // console.log(this.cishan)
+        // console.log($("#personNum"))
             // $("#personNum").numberRock({
             //     lastNumber:324234
             // });
