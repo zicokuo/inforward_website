@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- <router-view></router-view> -->
-    <com-header></com-header>
+    <com-header :headerbj="require('@/assets/img/zhaopin_01.jpg')"></com-header>
     <main>
       <div class="content">
         <!-- <div class="xulie">
@@ -16,7 +16,7 @@
           </div>
         <section>
           <p class="section_p">国内租赁行业的翘首，近两年成长最快的租赁平台。高速增长的集团业务公司。<br>其实我们只是一群想做点事情的人，一群有着相同价值观的人，一群坚信能创造伟大的人。</p>
-          <ul class="section_ul">
+          <!-- <ul class="section_ul">
             <swiper :options="swiperOption" ref="mySwiper" @someSwiperEvent="callback">
               <swiper-slide v-for="(e,i) in 8" :key="i+'l'" class="li">
                   <img src="@/assets/img/yfytlogo.png" alt="">
@@ -39,12 +39,37 @@
 
               <img src="@/assets/img/jtright.png" alt="" >
             </div>
-          </ul>
-          
+          </ul> -->
+          <div style="width:1200px;padding:0;border-radius:5px;" class="content_div">
+                <swiper :options="swiperOption" @someSwiperEvent="callback">
+                    <swiper-slide v-for="(p,i) in 24" :key="i">
+                        <div class="content_div_d">
+                             <img src="@/assets/img/yfytlogo.png" alt="">
+                            <h5>盈富永泰集团有限公司{{i}}</h5>
+                            <p class="section_ul_p1">
+                              <span>品质总监高级专员</span>
+                              <span>面议</span>
+                            </p>  
+                            <p class="section_ul_p2">
+                              <span>设计总监</span>
+                              <span>30-50万</span>
+                            </p>
+                            <a href="javascript:;" class="rezhao">更多热招职位 </a>
+                        </div>
+                    </swiper-slide>
+                    <div class="swiper-pagination" slot="pagination"></div>
+                    <div class="swiper-button-prev ytyf_jtl" slot="button-prev" style="top:auto;">
+                        <img src="@/assets/imgs/swiper-prev.png" alt="" style="    left: 0;position: absolute;top:7px;">
+                    </div>
+                    <div class="swiper-button-next ytyf_jtr" slot="button-next" style="top:auto;">
+                        <img src="@/assets/imgs/swiper-next.png" alt="" style="    right: 0;position: absolute;top:7px;">
+                    </div>
+                </swiper>
+            </div>
           <div class="tit">
             <h2>我们的客户也在招贤纳士</h2>
           </div>
-          <div style="width:1400px;padding:0;border-radius:5px;" class="content_div">
+          <div style="width:1200px;padding:0;border-radius:5px;" class="content_div">
                 <swiper :options="swiperOption3">
                     <swiper-slide v-for="(p,i) in 24" :key="i">
                         <div class="content_div_d">
@@ -63,10 +88,10 @@
                     </swiper-slide>
                     <div class="swiper-pagination" slot="pagination"></div>
                     <div class="swiper-button-prev ytyf_jtl" slot="button-prev">
-                        <img src="@/assets/imgs/swiper-prev.png" alt="" style="    left: 0;position: absolute;top: 18px;">
+                        <img src="@/assets/imgs/swiper-prev.png" alt="" style="    left: 0;position: absolute;top:7px;">
                     </div>
                     <div class="swiper-button-next ytyf_jtr" slot="button-next">
-                        <img src="@/assets/imgs/swiper-next.png" alt="" style="    right: 0;position: absolute;top: 18px;">
+                        <img src="@/assets/imgs/swiper-next.png" alt="" style="    right: 0;position: absolute;top:7px;">
                     </div>
                 </swiper>
             </div>
@@ -83,6 +108,7 @@
 </template>
 <style scoped src="swiper/dist/css/swiper.css"></style>
 <style scoped src="@/assets/css/recruit.css" type="text/css"></style>
+
 <script>
 const comBreadCrumb = () => import('@/pages/components/breadcrumb.vue');
 const comHeader = () => import('@/pages/components/header.vue');

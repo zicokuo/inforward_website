@@ -4,13 +4,7 @@
         <main>
             <img src="@/assets/img/hhuaduo.png" alt="" class="main_hd">
             <div class="content">
-                <!-- <div class="xulie">
-                    <img src="@/assets/img/fangzi.png" alt="">
-                    <span class="jiantou">主页</span>
-                    <span class="jiantou">走进盈富永泰</span>
-                    <span>集团介绍</span>
-                </div> -->
-                <mu-flexbox-item style="background:none;width:1360px;text-align:left;">
+                <mu-flexbox-item>
                     <com-bread-crumb></com-bread-crumb>
                 </mu-flexbox-item>
                 <img src="@/assets/img/jttitle.png" alt="" class="content_tit">
@@ -43,9 +37,10 @@
                                 <p>盈富永泰集团是广州南沙委员会投资顾问，在房地产投资、金融、发展、建设管理和资产管理 方面有丰富经验。自2016年以来，</p>
                                 <p>盈富永泰集团及其附属机构共管理、开发或拥有超过100亿广州写字楼资产。今天，盈富永泰集团为客户提供了大约60亿的房地产投资组合。投资组合是多样化的，既有稳健的资产组合，又有地理分布。</p>
                                 <p>基金策略积极寻求机会，投资于核心和核心加物业，以及增值运营物业和发展项目。</p>
-                                <p>富永泰集团为客户提供了大约60亿的房地产投资组合基金策略积极寻求机会，投资于核心和核心加物业，以及增值运营物业和发展项目。基金策略积极寻求机会，投资于核心和核心加物业，以及增值运营物业和发展项目。60亿的房地产投资组合盈富永泰集团为客户提供了大约60亿的房地产投资组合</p>
+                                <p>富永泰集团为客户提供了大约60亿的房地产投资组合基金策略积极寻求机会，投资于核心和核心加物业，以及增值运营物业和发展项目。基金策略积极寻求机会，投资于核心和核心加物业，以及增值运营物业和发展项目。60亿的房地产投资组合盈富永泰集团为客户提供了大约60亿的房地产投资组合。</p>
                             </div>
-                            <img src="@/assets/img/yuanbtn.png" class="yuanbtn" alt="" id="close">
+                            <div class="yuanbtn" id="close"><img src="@/assets/img/dc.png" alt=""></div>
+                            <!-- <img src="@/assets/img/yuanbtn.png" class="yuanbtn" alt="" id="close"> -->
                         </div>
                     </ul>
 
@@ -57,6 +52,7 @@
 </template>
 
 <style scoped src="@/assets/css/introduce.css"></style>
+
 <script>
 const comHeader = () => import("@/pages/components/header.vue");
 const comBreadCrumb = () => import("@/pages/components/breadcrumb.vue");

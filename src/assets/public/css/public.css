@@ -105,6 +105,7 @@ header{
     50% {background-position: -100px bottom;}
     100% {background-position: -200px bottom;}
   }
+
 /*序列箭头*/
 .xulie{font-size:0;}
 .xulie a{font-size:16px;color:#000;}

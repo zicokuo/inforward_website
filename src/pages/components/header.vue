@@ -10,12 +10,6 @@
                 </div> -->
                 <!--<img src="@/assets/img/COOPERATIVEPARTNER.png" alt="" class="yw">-->
                 <div class="nav_right">
-                    <!-- <div class="nav_right_icon">
-                        <img src="@/assets/img/sousuo.png" alt="">
-                        <img src="@/assets/img/aixin.png" alt="">
-                        <img src="@/assets/img/xiaoxi.png" alt="">
-                        <img src="@/assets/img/fenxiang.png" alt="">
-                    </div> -->
                     <div class="nav_right_yuan">
                         <div class="loading">
                             <div class="quan">

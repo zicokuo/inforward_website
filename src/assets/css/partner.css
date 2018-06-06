@@ -8,7 +8,7 @@ main{background:#f8f5f6;width:100%;position:relative;}
 	margin:0 16px;
 }
 .main_content{padding-top:77px;margin:0 auto;text-align:center;}
-.main_content p{line-height:1.6;font-size: 32px;font-weight: 800;margin-top:11px;}
+.main_content p{line-height:1.6;font-size: 32px;font-weight: 800;margin-top:11px;    font-family: fzlt;}
 .main_content_p{margin-top:76px;}
 .content_title{font-size: 30px;background: -webkit-linear-gradient(left, #004275 20%,#1ebef7, #00d4ff);	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;margin-bottom: 53px;}

@@ -11,6 +11,7 @@ import MuseUI from 'muse-ui'
 import '@/components/jquery.vender.js'
 import 'muse-ui/dist/muse-ui.css'
 import '../static/material-fonts/material-icons.css'
+import '../static/font/newfont.css'
 import '@/assets/scss/main.scss'
 
 import ImageHelper from '@/components/img.vender.js'

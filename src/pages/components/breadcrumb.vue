@@ -1,5 +1,6 @@
 <template>
-  <div id="webSiteBreadcrumb">
+  <div id="webSiteBreadcrumb" style="background:none;width:1360px;text-align:left;    font-size: 16px;
+    font-family: 微软雅黑;">
     <mu-breadcrumb :separator="sep">
       <mu-breadcrumb-item v-for="(e,i) in urls" :key="i" :href="e.url||''" color="grey600">
         <mu-icon color="grey600" v-if="e.icon.length>0" :value="e.icon" :style="{position:'relative',top:'0.3em'}" /><span style="color: rgb(117, 117, 117);">{{e.title||'暂定'}}</span>

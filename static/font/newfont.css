@@ -1,0 +1,9 @@
+/*新字体*/
+@font-face{
+	font-family: "fzlt";
+	src:url(fzlt.ttf);
+}
+@font-face{
+	font-family: "adobebold";
+	src: url(AdobeHeiti_S60.cn.ttf);
+}
