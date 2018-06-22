@@ -1,17 +1,17 @@
 <template>
   <div id="screenIndex" class="section">
     <div class="parallaxLayer" :style="'background-image:url('+bg+');'">
-      <div data-depth="0.1" style="z-index:1000">
+      <!-- <div data-depth="0.1" style="z-index:1000">
         <img class='adaptive-imgs' src="@/assets/imgs/bigTitle.png" />
       </div>
       <div class="adaptive-ball" v-for="( ball , index ) in balls" :key="index" :data-depth='Math.random().toFixed(2)' :style="{'z-index':ball.z}">
         <img class="relative adaptive-imgs adaptive-items" :src="ball.imgSrc" :style="{'left':ball.x+'px','top':ball.y+'px'}" />
-      </div>
+      </div> -->
     </div>
     <div class="absolute adaptive-items" style="top:895px;left:840px">
       <div class="title">Welcome to Inforward</div>
       <div style="padding-top:2em">
-        <img src="@/assets/imgs/downBtn.png" />
+        <img src="@/assets/img/downBtn.png" />
       </div>
     </div>
     <div style="background:white;width:100%;">
@@ -60,7 +60,7 @@ let Balls = [
   },
   { imgSrc: require("@/assets/imgs/flower2.png"), x: "974", y: "152", z: "900" }
 ];
-let screenIndexBg = require("@/assets/imgs/screen_index_bg.png");
+let screenIndexBg = require("@/assets/img/yasuo.jpg");
 import Parallax from "parallax-js";
 export default {
   name: "screenIndex",

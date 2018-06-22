@@ -7,7 +7,7 @@
                 <!-- OUR ACTI -->
             </mu-flexbox-item>
         </mu-flexbox>
-        <mu-flexbox orient="vertical" style="background:#f8f5f6;padding-top:3em;" :gutter="50">
+        <mu-flexbox orient="vertical" style="background:#f8f5f6;padding-top:3em;">
             <!-- 面包屑 -->
             <mu-flexbox-item style="background:none;width:1360px;">
                 <com-bread-crumb></com-bread-crumb>
@@ -70,7 +70,7 @@
                     <span>友情链接</span>
                     <div class="highlight"></div>
                 </div>
-                <mu-flexbox class="frendLinks inforward-grid inforward-grid-4" wrap="wrap">
+                <mu-flexbox class="frendLinks inforward-grid inforward-grid-4 yqlj" wrap="wrap">
                     <div  v-for="i in 12" :key="i" class="grid">
                     <mu-flexbox-item  :class="'img-'+i" :style="{backgroundImage:'url('+require('@/assets/imgs/category/community/frendLinks-sprite.png')+')'}">
                     </mu-flexbox-item>
@@ -138,8 +138,13 @@ export default {
       .description {
         color: #333;
         font-size: 14px;
+        margin-top: 30px;
       }
     }
+  }
+  .yqlj{
+      background: #fff;
+      margin-top:60px;
   }
   .frendLinks {
     $size: 64px;
@@ -158,12 +163,12 @@ export default {
 <style spoced>
 .swiper-button-next{
     background-image:none;
-    right: 24px;
+    right: 20px;
     top: 53%;
 }
 .swiper-button-prev{
     background-image: none;
-    left:24px;
+    left:0px;
     top: 53%;
 }
 .grid{
@@ -174,4 +179,16 @@ export default {
 .grid>div{
         display: inline-block;
     }
+.mu-card-text{
+    position: relative;
+    bottom: 18px;
+        overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 16px;
+}
 </style>

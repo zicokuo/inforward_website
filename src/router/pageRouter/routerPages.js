@@ -9,7 +9,7 @@ const pageIndex = () =>
 const pageRouter = [{
   //  业务
   path: '/lease',
-  name: 'category page',
+  // name: 'category page',
   component: pageCate,
   meta: {
     title: '盈泰永富业务'
@@ -17,7 +17,7 @@ const pageRouter = [{
   children: [{
     //  办公室租赁
     path: '/lease',
-    name: 'group benefit',
+    // name: 'group benefit',
     component: pageLease,
     meta: {
       title: '办公室租赁'
@@ -26,7 +26,7 @@ const pageRouter = [{
 }, {
 //  搜索办公租赁
   path: '/residence',
-  name: 'pageResidence',
+  // name: 'pageResidence',
   component: pageCate,
   meta: {
     title: '搜索办公租赁'
@@ -34,7 +34,7 @@ const pageRouter = [{
   children: [{
     
     path: '/residence',
-    name: 'group benefit',
+    // name: 'group benefit',
     component: pageResidence,
     meta: {
       title: '搜索办公租赁'
@@ -42,7 +42,7 @@ const pageRouter = [{
   }]
 }, {
   path: '',
-  name: 'pageIndex',
+  // name: 'pageIndex',
   component: pageIndex,
   meta: {
     title: '官网首页'

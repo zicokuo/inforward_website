@@ -14,6 +14,14 @@ const pageRouter = {
   },
   children: [{
     //  公益事业
+    path: '',
+    name: 'group benefit',
+    component: pageCateBenefit,
+    meta: {
+      title: '公益事业'
+    }
+  },{
+    //  公益事业
     path: 'public_good',
     name: 'group benefit',
     component: pageCateBenefit,

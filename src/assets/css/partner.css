@@ -29,12 +29,12 @@ main{background:#f8f5f6;width:100%;position:relative;}
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;font-size:32px;font-weight: 800;    line-height: 1.6;
     font-size: 32px;
-    font-weight: 800;
+    font-weight: 800;margin-bottom: 20px;
     margin-top:70px;text-align: center;}
 .kbicon{margin:0 auto;display: block;margin-bottom: 54px;}
-.zlhz p{text-align:center;font-size: 24px;font-weight:800;}
+.zlhz p{text-align:center;font-size: 24px;font-weight:800;   line-height: 2;}
 .zlhz{padding-bottom: 45px;}
-footer{	width: 1400px;margin:auto;padding:0 53px;box-sizing:border-box;}
+footer{	width: 1400px;margin:auto;padding:0 53px;box-sizing:border-box; }
 .footer_left ul li{font-size:0;}
 .f_l_icon{margin-right:16px;display: inline-block;vertical-align:top;}
 .f_l_div p{margin-top:20px;font-weight:800;}

@@ -14,7 +14,7 @@ const pageRouter = {
   },
   children: [{
     //  新闻中心
-    path: 'company_news',
+    path: '',
     name: 'page category news',
     component: pageCateCompanyNew,
     meta: {
@@ -27,6 +27,14 @@ const pageRouter = {
     component: pageCateCommunityActivity,
     meta: {
       title: '社区活动'
+    }
+  }, {
+    //  新闻中心
+    path: 'company_news',
+    name: 'page category news',
+    component: pageCateCompanyNew,
+    meta: {
+      title: '新闻中心'
     }
   }]
 }

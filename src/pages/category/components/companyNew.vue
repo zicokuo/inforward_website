@@ -1,10 +1,20 @@
 <template>
     <div id="cateCompanyNew">
-        <mu-flexbox :style="topBannar.style" justify="center" align="center" class="bannar">
+        <!-- <mu-flexbox :style="topBannar.style" justify="center" align="center" class="bannar">
+            <mu-flexbox-item class="title">
+                COMPANY NEWS
+            </mu-flexbox-item>
+        </mu-flexbox> -->
+        <com-header :headerbj="require('@/assets/imgs/category/bannar_bg.png')">
+            
+            <template slot="slot1">
+                <mu-flexbox :style="topBannar.style" justify="center" align="center" class="bannar">
             <mu-flexbox-item class="title">
                 COMPANY NEWS
             </mu-flexbox-item>
         </mu-flexbox>
+            </template>
+        </com-header>
         <mu-flexbox orient="vertical" style="background:#f8f5f6;padding-top:3em;" :gutter="50">
             <!-- 面包屑 -->
             <mu-flexbox-item class="" style="background:none;width:1360px;">
@@ -92,10 +102,11 @@
 </template>
 
 <script>
+const comHeader = () => import('@/pages/components/header.vue');
 let topBannar = {
   style: {
-    backgroundImage:
-      "url(" + require("@/assets/imgs/category/bannar_bg.png") + ")",
+    // backgroundImage:
+    //   "url(" + require("@/assets/imgs/category/bannar_bg.png") + ")",
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
@@ -110,7 +121,8 @@ export default {
     };
   },
   components: {
-    "com-bread-crumb": () => import("@/pages/components/breadcrumb.vue")
+    "com-bread-crumb": () => import("@/pages/components/breadcrumb.vue"),
+    'com-header':comHeader
   },
   created() {
     let posts = window.$helper.url.buildPostsUrl(window.$api.getPosts());
@@ -119,7 +131,24 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
+/*设置header高度*/
+#headerModule /deep/ header{
+    height:600px;
+}
+#headerModule /deep/ .nav_right{
+        position: absolute;
+    top: 0;
+    margin-top: 100px;
+    right: 0;
+}
+.title{
+        color: #ffce38;
+    font-size: 60px;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+    letter-spacing: 0.2em;
+    text-align: center;
+}
 #cateCompanyNew {
   & .day {
     font-size: 56px;

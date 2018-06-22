@@ -15,27 +15,12 @@ const pageResidence = () =>
 const routerDefault = {
   //  默认路由 - 首页
   path: '/',
-  name: 'pageIndex',
+
   component: { template: '<router-view/>' },
   meta: {
     title: '首页'
   },
   children: routerPages
-  // children: [{
-  //   path: 'pageResidence',
-  //   name: 'pageResidence',
-  //   component: pageResidence,
-  //   meta: {
-  //     title: '搜索'
-  //   }
-  // }, {
-  //   path: '',
-  //   name: 'pageIndex',
-  //   component: pageIndex,
-  //   meta: {
-  //     title: '官网首页'
-  //   }
-  // }]
 }
 Vue.use(Router)
 const mainRouter = new Router({

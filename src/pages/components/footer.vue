@@ -21,11 +21,12 @@
       <!-- 中间栏目 -->
       <mu-flexbox-item>
         <mu-flexbox justify="center" style="height:92px">
-          <mu-flexbox-item v-for="(e,i) in footerLinks" :key="i">
+          <img :src="telImg" alt="">
+          <!-- <mu-flexbox-item v-for="(e,i) in footerLinks" :key="i">
             <router-link :to="e.url">
               <img :src="e.imgUrl" />
             </router-link>
-          </mu-flexbox-item>
+          </mu-flexbox-item> -->
         </mu-flexbox>
         <mu-flexbox orient="vertical">
 
@@ -116,13 +117,15 @@ export default {
       leftFooterContents: leftFooterContents,
       centerFooterContents: centerFooterContents,
       copyRight: copyRight,
-      footerLinks: footerLinks
+      footerLinks: footerLinks,
+      telImg:require('@/assets/img/relation.png')
     };
   }
 };
 </script>
 
 <style lang="scss">
+
 #pageFooter {
   background: white;
   margin-top: 4em;

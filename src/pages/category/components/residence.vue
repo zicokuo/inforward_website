@@ -37,11 +37,14 @@
                     <a href="javascript:;"><img src="@/assets/img/gdfy.png" alt=""></a>
                 </div>
                 <ul class="content_list">
+                    
                     <li v-for="(itemw,index) in contentList" :key="index">
-                        <img :src="itemw.photo" alt="">
-                        <div class="zhezhao">
-                            <p>{{ itemw.name }}</p>
-                            <span>{{ itemw.area }}</span>    
+                        <div>
+                            <img :src="itemw.photo" alt="">
+                            <div class="zhezhao">
+                                <p>{{ itemw.name }}</p>
+                                <span>{{ itemw.area }}</span>    
+                            </div>
                         </div>
                     </li>
                     

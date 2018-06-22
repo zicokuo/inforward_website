@@ -16,6 +16,14 @@ const pageRouter = {
   },
   children: [{
     //  集团介绍
+    path: '',
+    name: 'group introduction',
+    component: pageCatePartner,
+    meta: {
+      title: '集团介绍'
+    }
+  }, {
+    //  集团介绍
     path: 'partner',
     name: 'group introduction',
     component: pageCatePartner,

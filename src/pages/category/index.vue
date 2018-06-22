@@ -95,16 +95,17 @@ export default {
         font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
         font-size: 28px;
         font-weight: 900;
-        background: linear-gradient(to right, #3273be, #843a9d);
+        // background: linear-gradient(to right, #3273be, #843a9d);
         -webkit-background-clip: text;
-        color: transparent;
+        color: #000;
       }
     }
     & > .description {
       font-size: 30px;
       font-weight: 900;
       color:#333;
-      text-align: center
+      text-align: center;
+      margin-top: 30px;
     }
     & .posts-list {
       padding-top: 3em;
@@ -147,6 +148,14 @@ export default {
       & .description {
         color: #6d6d6d;
         line-height: 1.8em;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        box-sizing: border-box;
+        padding: 0;
+        font-family: Microsoft Yahei;
       }
     }
   }

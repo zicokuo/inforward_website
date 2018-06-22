@@ -67,11 +67,13 @@ main{
     
 }
 ul{margin-left:0;padding:0;}
+.details_big{background: #fff;width:100%;padding-top:35px;padding-bottom:70px;}
 .details{
         width:1400px;
         margin:0 auto;
+        
         .biaoqian{
-            margin-bottom: 40px;
+            margin-bottom:28px;
             span{
                 margin-right:5px;
             }
@@ -101,19 +103,23 @@ ul{margin-left:0;padding:0;}
                 display: inline-block;
                 padding:19px 20px 10px 36px;
                 box-sizing:border-box;
-                border:1px solid #ccc;
+                border:1px solid #e7e1e0;
+                text-align:left;
+                font-family: MicrosoftYaHei;
                 >p{
                     font-size:22px;
                     margin-bottom:15px;
                     span{
                         font-size:16px;
                         float: right;
+                        font-size: 14px;
                         &:before{
                             content:'';
-                            background:url(../img/didian.png)center no-repeat;
+                            background:url(../img/didian.png)bottom center no-repeat;
                             width: 16px;
                             height:16px;
                             display: inline-block;
+                            margin-right: 10px;
                         }
                     }
                     
@@ -126,6 +132,7 @@ ul{margin-left:0;padding:0;}
                     p{
                         color:#747474;
                         display: inline-block;
+                        margin-right: 45px;
                     }
                     p span{
                         color:#f15d53;
@@ -137,7 +144,7 @@ ul{margin-left:0;padding:0;}
                         width: 237px;
                         height:46px;
                         font-size: 28px;
-                        font-weight:200;
+                        font-weight:400;
                         outline: none;
                         border-radius: 5px;
                         // padding: 16px 32px;
@@ -150,6 +157,7 @@ ul{margin-left:0;padding:0;}
                         background-color: #f1c40f;
                         z-index: 1;
                         box-shadow: 0px 5px 0px 0px #D8AB00;
+                        font-family: MicrosoftYaHei;
                         &:active {
                             transform: translate(0px, 5px);
                             -webkit-transform: translate(0px, 5px);

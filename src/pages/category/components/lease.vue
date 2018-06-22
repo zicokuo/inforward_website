@@ -34,39 +34,41 @@
                 </ul>
             </div>
         </main>
-        <div class="details">
-            <ul>
-                <!-- <li v-for="(item,index) in detailsList" :key="index+'l'">
-                    <img src="" alt="">
-                </li> -->
-                <li class="clearfloat" v-for="(item,index) in detailsList" :key="index">
-                    <img :src="item.url" alt="" />
-                    <div>
+        <div class="details_big">
+            <div class="details">
+                <ul>
+                    <!-- <li v-for="(item,index) in detailsList" :key="index+'l'">
+                        <img src="" alt="">
+                    </li> -->
+                    <li class="clearfloat" v-for="(item,index) in detailsList" :key="index">
+                        <img :src="item.url" alt="" />
+                        <div>
 
-                        <p>{{ item.title }}
-                            <span>{{ item.loca }}</span>
-                        </p>
-                        <div class="biaoqian">
-                            <span v-for="itemi in item.label" :key="itemi">{{ itemi }}</span>
-                            <!-- <span>东南朝向</span>
-                            <span>花城汇</span>
-                            <span>望江</span>
-                            <span>望广州塔</span> -->
+                            <p>{{ item.title }}
+                                <span>{{ item.loca }}</span>
+                            </p>
+                            <div class="biaoqian">
+                                <span v-for="itemi in item.label" :key="itemi">{{ itemi }}</span>
+                                <!-- <span>东南朝向</span>
+                                <span>花城汇</span>
+                                <span>望江</span>
+                                <span>望广州塔</span> -->
+                            </div>
+                            <div class="mianji">
+                                <p>单元面积：
+                                    <span>{{ item.area }}</span>平方米</p>
+                                <p>实收：
+                                    <span>{{ item.shishou }}</span>元</p>
+                                <button v-on:click="look">预约看盘</button>
+                            </div>
+                            <div class="weizhi clearfloat">
+                                
+                                <span v-for="(itemo,indexi) in item.didian" :key="indexi"><b>{{ itemo.title }}</b>{{ itemo.lc }}</span>
+                            </div>
                         </div>
-                        <div class="mianji">
-                            <p>单元面积：
-                                <span>{{ item.area }}</span>平方米</p>
-                            <p>实收：
-                                <span>{{ item.shishou }}</span>元</p>
-                            <button v-on:click="look">预约看盘</button>
-                        </div>
-                        <div class="weizhi clearfloat">
-                            
-                            <span v-for="(itemo,indexi) in item.didian" :key="indexi"><b>{{ itemo.title }}</b>{{ itemo.lc }}</span>
-                        </div>
-                    </div>
-                </li>
-            </ul>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
 </template>

@@ -22,7 +22,9 @@
 }
 .header_footer{
 	width: 1400px;
-	margin:0 auto; 
+    margin:0 auto; 
+    font-size: 18px;
+    letter-spacing: 2px;
 }
 .header_footer ul li img{
 	vertical-align: middle;
@@ -132,18 +134,23 @@ main{
         margin-right: 55px;
         margin-bottom:109px;
         position:relative;
-        overflow:hidden;
-        width: 287px;
-        >img{
-            display: block;
-            width: 287px;
-            height: 226px;
-        }
-        >div{
-            padding:20px;
-        flex-grow:1;
         
+        width: 287px;
+        >div{
+            overflow:hidden;
+            position:relative;
+            >img{
+                display: block;
+                width: 287px;
+                height: 226px;
+            }
+            >div{
+                padding:20px;
+            flex-grow:1;
+            
+            }            
         }
+        
         
         p{
             color:#343434;
