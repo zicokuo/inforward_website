@@ -17,7 +17,8 @@
     <div style="background:white;width:100%;">
       <mu-flexbox style="max-width:1000px;margin:auto" align="center" justify="center" class="indexLink">
         <mu-flexbox-item v-for="(e,i) in indexLinks" :key="i" style="padding:1em;" align="center">
-          <mu-flat-button :to="e.url" :label="e.title" :style="e.style" class="flat-button" primary/>
+          <span>ABOUT US</span>
+          <mu-flat-button :to="e.url" :label="e.title" :style="e.style" class="flat-button" primary  v-on:click="acity(i)"/>
         </mu-flexbox-item>
       </mu-flexbox>
     </div>
@@ -29,17 +30,17 @@ let indexLinks = [
   {
     title: "关于我们",
     url: "",
-    style: { background:'url('+require("@/assets/imgs/rightBtn.png")+') no-repeat center left',height:'50px',paddingLeft:'2em',fontSize:'24px',color:'black'}
+    style: { background:'url('+require("@/assets/imgs/indeximg/gywm.png")+') no-repeat center left',height:'63px',paddingLeft:'2em',fontSize:'24px',color:'black'}
   },
   {
     title: "我们的项目",
     url: "",
-    style: { background:'url('+require("@/assets/imgs/rightBtn.png")+') no-repeat center left',height:'50px',paddingLeft:'2em',fontSize:'24px',color:'black'}
+    style: { background:'url('+require("@/assets/imgs/indeximg/project.png")+') no-repeat center left',height:'63px',paddingLeft:'2em',fontSize:'24px',color:'black'}
   },
   {
     title: "联系我们",
     url: "",
-    style: { background:'url('+require("@/assets/imgs/rightBtn.png")+') no-repeat center left',height:'50px',paddingLeft:'2em',fontSize:'24px',color:'black'}
+    style: { background:'url('+require("@/assets/imgs/indeximg/lianxi.png")+') no-repeat center left',height:'63px',paddingLeft:'2em',fontSize:'24px',color:'black'}
   }
 ];
 let Balls = [
@@ -89,6 +90,15 @@ export default {
         });
       });
     });
+    
+  },methods:{
+    acity:(index) => {
+    //  var that = document.getElementsByClassName('flat-button')[index]
+    //  console.log(that);
+     
+     document.getElementsByClassName('flat-button')[index].style.background = 'url('+require("@/assets/imgs/indeximg/projectac.png")+') no-repeat center left'
+    
+    }
   }
 };
 </script>

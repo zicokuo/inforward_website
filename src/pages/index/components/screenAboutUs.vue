@@ -2,21 +2,33 @@
     <div id="screenAboutUs" class="section">
         <mu-flexbox :style="bannarStyle">
             <mu-flexbox-item justify="center" align="center">
+              <div class="bannar-summary">
+                    关于我们
+                </div>
                 <div class="bannar-title">
                     About Us
                 </div>
-                <div class="bannar-summary">
-                    关于我们
-                </div>
+                
             </mu-flexbox-item>
         </mu-flexbox>
         <mu-flexbox>
             <mu-flexbox-item justify="center" align="center">
                 <img src="@/assets/imgs/title2summary.png" style="margin:5em 0;"/>
-                <div class="standard-text">盈富永泰集团是广州南沙委员会投资顾问，在房地产投资、金融、发展、建设管理和资产管理方面有丰富经验。自2016年以来，</div>
-                <div class="standard-text">盈富永泰集团及其附属机构共管理、开发或拥有超过100亿广州写字楼资产。今天，盈富永泰集团为客户提供了大约60亿的房地产投资组合。投资组合是多样化的，既有稳健的资产组合，又有地理分布。</div>
-                <div class="standard-text">基金策略积极寻求机会，投资于核心和核心加物业，以及增值运营物业和发展项目。</div>
-                <div class="standard-text">盈富永泰集团为客户提供了大约60亿的房地产投资组合</div>
+                <!-- <p>WELCOME TO THE INFORWORD</p> -->
+                <ul class="ul-list">
+                  <li>
+                    
+                      <img src="" alt="">
+                      <p></p>
+                    
+                  </li>
+                </ul>
+                <div class="standard-text">2016 年，盈富永泰集团正式注册成立，总部设于广州珠江新城核心商业区环球都会广场，注册资金1.5亿，目标致力于成为一家集商业地产租售托管服</div>
+                <div class="standard-text">务为中心，互联网信息服务、智能科技、商务中心开发运营、优质中小型企业孵化IPO服务为一体化的多元化集团。</div>
+                <div class="standard-text">2017年起，盈富永泰制定出一系列符合中国商业地产市场环境的服务产品，全力打造最多元的CBD生活方式，同时为投资者提供符合其业务策略的增值</div>
+                <div class="standard-text">服务，一站式办公新生态体系，带出世界顶级商业地产管理经验与服务理念。</div>
+                <div class="standard-text">盈富永泰旗下拥有<b>广州市盈富永泰商务服务中心，广州市盈富永泰网络服务有限公司、广州市盈富永泰智能科技有限公司、广州市灏璟房地产有限公司、广州市灏顺物业管理有限公司</b>等五大公司。
+                </div>
             </mu-flexbox-item>
         </mu-flexbox>
         <div class="parallaxLayer">
@@ -55,13 +67,24 @@ export default {
 #screenAboutUs {
   & .bannar {
     &-title {
-      font-size: 60px;
-      color: #ffce38;
+    font-size: 24px;
+    color: #ffce38;
+    display: inline-block;
+    position: relative;
+    &:before{
+      content:'';
+        width: 100%;
+        height: 3px;
+        background:#ffce38;
+        display: block;
+      }
     }
     &-summary {
       font-size: 40px;
       font-weight: 900;
-      color: white;
+      color: #ffce38;
+      letter-spacing: 6px;
+      margin-bottom: 20px;
     }
   }
 }
