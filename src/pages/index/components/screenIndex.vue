@@ -14,14 +14,26 @@
         <img src="@/assets/img/downBtn.png" />
       </div>
     </div>
-    <div style="background:white;width:100%;">
+    <ul>
+      <li v-for="(e,i) in indexLinks" :key="i" style="padding:1em;" align="center">
+        <div>
+          <img :src="e.url" alt="" style="display:block;">
+        </div>
+        <div>
+          <img :src="e.titSrc" alt=""><br>
+          <p>{{ e.title }}</p>
+        </div>
+      </li>
+    </ul>
+    <!-- <div style="background:white;width:100%;">
+      
       <mu-flexbox style="max-width:1000px;margin:auto" align="center" justify="center" class="indexLink">
         <mu-flexbox-item v-for="(e,i) in indexLinks" :key="i" style="padding:1em;" align="center">
           <span>ABOUT US</span>
           <mu-flat-button :to="e.url" :label="e.title" :style="e.style" class="flat-button" primary  v-on:click="acity(i)"/>
         </mu-flexbox-item>
       </mu-flexbox>
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -29,17 +41,20 @@
 let indexLinks = [
   {
     title: "关于我们",
-    url: "",
+    url: require("@/assets/imgs/indeximg/gywmac.png"),
+    titSrc:require("@/assets/imgs/indeximg/aboutus.png"),
     style: { background:'url('+require("@/assets/imgs/indeximg/gywm.png")+') no-repeat center left',height:'63px',paddingLeft:'2em',fontSize:'24px',color:'black'}
   },
   {
     title: "我们的项目",
-    url: "",
+    url: require("@/assets/imgs/indeximg/project.png"),
+    titSrc:require("@/assets/imgs/indeximg/aboutus.png"),
     style: { background:'url('+require("@/assets/imgs/indeximg/project.png")+') no-repeat center left',height:'63px',paddingLeft:'2em',fontSize:'24px',color:'black'}
   },
   {
     title: "联系我们",
-    url: "",
+    url: require("@/assets/imgs/indeximg/lianxi.png"),
+    titSrc:require("@/assets/imgs/indeximg/contaceus.png"),
     style: { background:'url('+require("@/assets/imgs/indeximg/lianxi.png")+') no-repeat center left',height:'63px',paddingLeft:'2em',fontSize:'24px',color:'black'}
   }
 ];
@@ -104,6 +119,9 @@ export default {
 </script>
 
 <style lang="scss">
+body{
+  background:#fafbfa;
+}
 #screenIndex {
   width: 100%;
   height: 100%;
@@ -126,6 +144,27 @@ export default {
   & .indexLink{
     .mu-flexbox-item{
       
+    }
+  }
+  ul{
+    width: 1200px;
+    display:flex;
+    justify-content:space-between;
+    margin:0 auto;
+    li{
+      list-style:none;
+      flex-direction: row;
+      display: flex;
+      >img{
+        flex-shrink:0;
+      }
+      p{
+        margin:0;
+        text-align:left;
+      }
+      div{
+         align-self:center;
+      }
     }
   }
 }

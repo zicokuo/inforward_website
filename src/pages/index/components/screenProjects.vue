@@ -2,15 +2,32 @@
   <div id="screenProjects" class="section" :style=sectionStyle>
     <mu-flexbox>
       <mu-flexbox-item justify="center" align="center" style="padding:2%">
-        <div class="bannar-title">
+        <!-- <div class="bannar-title">
           Projects
         </div>
         <div class="bannar-summary">
           我们的项目
-        </div>
+        </div> -->
+        <img src="@/assets/imgs/indeximg/meproject.png" alt="">
       </mu-flexbox-item>
     </mu-flexbox>
-    <mu-flexbox style="margin:7em 0">
+    <ul class="projects">
+      <li>
+        <img src="@/assets/imgs/indeximg/das_03.png" alt="" class="proimg">
+        <img src="@/assets/imgs/indeximg/imp.png" alt="">
+        </li>
+      <li>
+        <img src="@/assets/imgs/indeximg/office.png" alt="" class="proimg">
+        <img src="@/assets/imgs/indeximg/newinforward.png" alt="" class="inforimg">
+      </li>
+      <li><img src="@/assets/imgs/indeximg/private.png" alt="" class="proimg"></li>
+      <li>
+        <h2>广州珠江新城环球都会广场</h2>
+        <span>环球都会广场位于广州珠江新城中轴旁，携东塔及高德置地广场，组成近100万平米广州最高端国际商务区。</span>
+        <img src="@/assets/imgs/indeximg/indexqiu.png" alt="" class="indexqiu">
+      </li>
+    </ul>
+    <!-- <mu-flexbox style="margin:7em 0">
       <mu-flexbox-item>
         <swiper :options="swiperOption">
           <swiper-slide v-for="(p,i) in projects" :key="i" style="width:514px;height:595px;">
@@ -36,7 +53,7 @@
         </swiper>
       </mu-flexbox-item>
 
-    </mu-flexbox>
+    </mu-flexbox> -->
   </div>
 </template>
 
@@ -77,10 +94,10 @@ export default {
   data() {
     return {
       sectionStyle: {
-        backgroundImage: "url(" + require("@/assets/imgs/project_bg.png") + ")",
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "cover",
-        backgroundPosition: "bottom"
+        // backgroundImage: "url(" + require("@/assets/imgs/project_bg.png") + ")",
+        // backgroundRepeat: "no-repeat",
+        // backgroundSize: "cover",
+        // backgroundPosition: "bottom"
       },
       swiperOption: {
         slidesPerView: 4,
@@ -135,5 +152,69 @@ export default {
       }
     }
   }
+  .projects{
+    display: flex;
+    flex-wrap:wrap;
+    width: 1270px;
+    margin:0 auto;
+    margin-bottom:110px;
+    li{
+      background:#fff;
+      list-style: none;
+      width: 50%;
+      position:relative;
+      .proimg{
+        width: 100%;
+        position: relative;
+        z-index: 3;
+      }
+      .inforimg{
+            position: absolute;
+    top: -29px;
+    z-index: 4;
+    right: -19px;
+      }
+      img{
+        display:block;
+        
+      }
+    }
+    li:nth-of-type(1){
+      background:#fff;
+      .proimg{
+        position: absolute;
+        bottom:0;
+      }
+      img:nth-of-type(2){
+        position: absolute;
+        top:28%;
+        z-index: 1;
+      }
+    }
+    li:nth-of-type(4){
+      padding:130px;
+      h2{
+        color:#ccaa4f;
+        letter-spacing: 1px;
+      }
+      span{
+        font-size: 14px;
+        font-family: fzlt;
+        text-align:left;
+        display:block;
+      }
+    }
+    li:nth-of-type(2){
+      align-self: flex-end;
+    }
+    .indexqiu{
+      position: absolute;
+      right:-80px;
+    }
+  }
 }
+.parallaxLayer{
+  display: none;
+}
+
 </style>
