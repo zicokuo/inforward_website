@@ -30,7 +30,6 @@ const mainRouter = new Router({
     // routerCategory, routerDefault, routerhtyf, routerCommunity, routerPages
   ]
 })
-
 mainRouter.beforeEach((to, from, next) => {
   // console.log(to)
   if (to.meta.title) {
@@ -39,6 +38,5 @@ mainRouter.beforeEach((to, from, next) => {
   }
   next()
 })
-
 mainRouter.afterEach(transition => { })
 export default mainRouter
