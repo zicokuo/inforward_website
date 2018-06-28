@@ -2,26 +2,23 @@
 
   <div id="pageIndex">
     <com-topNav></com-topNav>
-    <swiper :options="swiperOption" ref="screenPageSwiper" @someSwiperEvent="handleSwiperScroll">
+    
       <!-- slides -->
-      <swiper-slide>
+      
         <com-screen-index></com-screen-index>
-      </swiper-slide>
-      <swiper-slide>
+    
         <com-screen-aboutus></com-screen-aboutus>
-      </swiper-slide>
-      <swiper-slide>
+      
+      
         <com-screen-projects></com-screen-projects>
-      </swiper-slide>
+     <swiper :options="swiperOption" ref="screenPageSwiper" @someSwiperEvent="handleSwiperScroll">
       <swiper-slide>
         <com-screen-map></com-screen-map>
-      </swiper-slide>
-      <swiper-slide>
-        <com-footer></com-footer>
       </swiper-slide>
       <div class="swiper-scrollbar" slot="scrollbar"></div>
       <!-- Optional controls -->
     </swiper>
+        <com-footer></com-footer>
 
   </div>
 </template>
@@ -59,9 +56,22 @@ export default {
     };
   },
   mounted() {
+    window.addEventListener('scroll',this.handleScroll)
   },
   methods: {
-    handleSwiperScroll: function() {}
+    handleSwiperScroll: function() {},
+    handleScroll(){
+      var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+      if(scrollTop > 1848.6){
+       imp.style.left = 0;
+       imp.style.opacity = 1;
+       inforimg.style.opacity = 1;
+       inforimg.style.top = -29+'px'
+       inforimg.style.right = -19+'px'
+      }
+    }
+  },
+  created(){
   },
   computed: {},
   watch: {},

@@ -7,7 +7,7 @@ const pageCateCommunityActivity = () =>
 const pageRouter = {
   //  栏目页面
   path: '/category',
-  name: 'category page',
+  // name: 'category page',
   component: pageCate,
   meta: {
     title: '栏目'
@@ -15,7 +15,7 @@ const pageRouter = {
   children: [{
     //  新闻中心
     path: '',
-    name: 'page category news',
+    // name: 'page category news',
     component: pageCateCompanyNew,
     meta: {
       title: '新闻中心'
@@ -23,7 +23,7 @@ const pageRouter = {
   }, {
     //  社区活动
     path: 'activity',
-    name: 'page category community activity',
+    // name: 'page category community activity',
     component: pageCateCommunityActivity,
     meta: {
       title: '社区活动'
@@ -31,7 +31,7 @@ const pageRouter = {
   }, {
     //  新闻中心
     path: 'company_news',
-    name: 'page category news',
+    // name: 'page category news',
     component: pageCateCompanyNew,
     meta: {
       title: '新闻中心'

@@ -40,7 +40,7 @@
 <style src="@/assets/public/css/normalize.css"></style>
 <style src="@/assets/css/animate.css"></style>
 <style src="@/assets/public/css/public.css"></style>
-<style scoped src="@/assets/public/css/public.css"></style>
+<!--<style scoped src="@/assets/public/css/public.css"></style>-->
 <script>
 import "@/assets/js/index.js";
 export default {

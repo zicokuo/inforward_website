@@ -1,13 +1,13 @@
 const pageCate = () =>
-  import ('@/pages/category/index.vue')
+  import('@/pages/category/index.vue')
 const pageCateBenefit = () =>
-  import ('@/pages/category/components/communityBenefit.vue')
+  import('@/pages/category/components/communityBenefit.vue')
 // const pageCateIntroduce = () =>
 //   import ('@/pages/category/components/introduce.vue')
 const pageRouter = {
   //  社区
   path: '/community',
-  name: 'category page',
+  // name: 'category page',
   component: pageCate,
   meta: {
     title: '社区'
@@ -15,18 +15,20 @@ const pageRouter = {
   children: [{
     //  公益事业
     path: '',
-    name: 'group benefit',
+    // name: 'group benefit',
     component: pageCateBenefit,
     meta: {
-      title: '公益事业'
+      title: '公益事业',
+      keepAlive: true
     }
-  },{
+  }, {
     //  公益事业
     path: 'public_good',
-    name: 'group benefit',
+    // name: 'group benefit',
     component: pageCateBenefit,
     meta: {
-      title: '公益事业'
+      title: '公益事业',
+      keepAlive: true
     }
   }]
 }

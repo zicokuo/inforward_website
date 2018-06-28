@@ -14,11 +14,11 @@
     <ul class="projects">
       <li>
         <img src="@/assets/imgs/indeximg/das_03.png" alt="" class="proimg">
-        <img src="@/assets/imgs/indeximg/imp.png" alt="">
+        <img src="@/assets/imgs/indeximg/imp.png" alt="" id="imp">
         </li>
       <li>
         <img src="@/assets/imgs/indeximg/office.png" alt="" class="proimg">
-        <img src="@/assets/imgs/indeximg/newinforward.png" alt="" class="inforimg">
+        <img src="@/assets/imgs/indeximg/newinforward.png" alt="" class="inforimg" id="inforimg">
       </li>
       <li><img src="@/assets/imgs/indeximg/private.png" alt="" class="proimg"></li>
       <li>
@@ -125,6 +125,9 @@ export default {
 
 <style lang="scss">
 #screenProjects {
+  #imp{
+    transition:all .8s;
+  }
   & .bannar {
     &-title {
       font-size: 60px;
@@ -170,9 +173,11 @@ export default {
       }
       .inforimg{
             position: absolute;
-    top: -29px;
+    top: -300px;
     z-index: 4;
-    right: -19px;
+    right: -300px;
+    opacity: 0;
+    transition: all .8s;
       }
       img{
         display:block;
@@ -189,6 +194,8 @@ export default {
         position: absolute;
         top:28%;
         z-index: 1;
+        left:-680px;
+        opacity:0;
       }
     }
     li:nth-of-type(4){

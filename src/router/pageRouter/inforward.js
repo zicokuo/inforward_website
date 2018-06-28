@@ -17,7 +17,7 @@ const pageRouter = {
   children: [{
     //  集团介绍
     path: '',
-    name: 'group introduction',
+    // name: 'group introduction',
     component: pageCatePartner,
     meta: {
       title: '集团介绍'
@@ -25,7 +25,7 @@ const pageRouter = {
   }, {
     //  集团介绍
     path: 'partner',
-    name: 'group introduction',
+    // name: 'group introduction',
     component: pageCatePartner,
     meta: {
       title: '集团介绍'
@@ -33,7 +33,7 @@ const pageRouter = {
   }, {
     //  集团介绍
     path: 'introduce',
-    name: 'group introduction',
+    // name: 'group introduction',
     component: pageCateIntroduce,
     meta: {
       title: '集团业务'
@@ -41,7 +41,7 @@ const pageRouter = {
   }, {
     //  招聘
     path: 'recruit',
-    name: 'group introduction',
+    // name: 'group introduction',
     component: pageCateRecruit,
     meta: {
       title: '招聘窗口'

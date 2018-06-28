@@ -46,41 +46,59 @@
           <mu-flexbox>
             <mu-flexbox-item class="nav_tit" style="margin-bottom:40px;">
               <a href="/">
-              官网主页</a>
+              <img :src="require('@/assets/imgs/public/home.png')" alt=""/>
+              <p>官网主页</p>
+              </a>
             </mu-flexbox-item>
           </mu-flexbox>
           <mu-flexbox>
             <mu-flexbox-item class="nav_tit">
-              走进盈富永泰
+              <img :src="require('@/assets/imgs/public/about.png')" alt="">
+              <p>走进盈富永泰</p>
             </mu-flexbox-item>
           </mu-flexbox>
           <mu-flexbox class="nav_list" align="center;" style="margin-bottom:28px;">
-            <router-link v-for="(index,oi) in datalist.stepInforward" :key="oi" :to="index.path" tag="div">{{index.title}}</router-link>
+            
+            <router-link v-for="(index,oi) in datalist.stepInforward" :key="oi" :to="index.path" tag="div" replace>
+              <img :src="datalist.stepInforward[oi].iconsrc" alt="" />
+              <p>{{index.title}}</p>
+              
+              </router-link>
           </mu-flexbox>
           <mu-flexbox>
             <mu-flexbox-item class="nav_tit">
-              集团项目产品
+              <img :src="require('@/assets/imgs/public/our.png')" alt="" />
+              <p>集团项目产品</p>
+              
             </mu-flexbox-item>
           </mu-flexbox>
           <mu-flexbox>
-            <mu-flexbox></mu-flexbox>
-            <mu-flexbox></mu-flexbox>
+   
             <mu-flexbox class="nav_list" style="margin-bottom:25px;">
-              <router-link v-for="(index,oi) in datalist.product" :key="oi" :to="index.path" tag="div">{{index.title}}</router-link>
+              <router-link v-for="(index,oi) in datalist.product" :key="oi" :to="index.path" tag="div" replace>
+                <img :src="datalist.product[oi].iconsrc" alt="" />
+                <p>{{index.title}}</p>
+                
+              </router-link>
             </mu-flexbox>
-            <mu-flexbox></mu-flexbox>
-            <mu-flexbox></mu-flexbox>
+       
           </mu-flexbox>
           <mu-flexbox>
             <mu-flexbox-item class="nav_tit">
-              社区
+              <img :src="require('@/assets/imgs/public/community.png')" alt="">
+              
+              <p>社区</p>
             </mu-flexbox-item>
           </mu-flexbox>
           <mu-flexbox>
             <mu-flexbox></mu-flexbox>
             <mu-flexbox></mu-flexbox>
             <mu-flexbox class="nav_list">
-              <router-link v-for="(index,oi) in datalist.community" :key="oi" :to="index.path" tag="div">{{index.title}}</router-link>
+              <router-link v-for="(index,oi) in datalist.community" :key="oi" :to="index.path" tag="div" replace>
+                <img :src="index.iconsrc" alt="" />
+                <p>{{index.title}}</p>
+                
+              </router-link>
             </mu-flexbox>
             <mu-flexbox></mu-flexbox>
             <mu-flexbox></mu-flexbox>
@@ -130,25 +148,25 @@ export default {
       datalist: {
         //集团介绍
         stepInforward: [
-          { path: "/inforward/partner", title: "集团介绍" },
-          { path: "/inforward/introduce", title: "客户展示" },
-          { path: "/category/company_news", title: "新闻中心" },
-          { path: "/", title: "合作伙伴" },
-          { path: "/inforward/recruit", title: "企业招聘" },
-          { path: "/", title: "友情链接" }
+          { path: "/inforward/partner", title: "集团介绍",iconsrc:require('@/assets/imgs/public/jtjs.png') },
+          { path: "/inforward/introduce", title: "客户展示&合作伙伴",iconsrc:require('@/assets/imgs/public/khzs.png') },
+          { path: "/category/company_news", title: "新闻中心",iconsrc:require('@/assets/imgs/public/xwzx.png') },
+          // { path: "/", title: "合作伙伴",iconsrc:require('@/assets/imgs/public/jtjs.png') },
+          { path: "/inforward/recruit", title: "企业招聘&友情链接",iconsrc:require('@/assets/imgs/public/qyzp.png') },
+          // { path: "/", title: "友情链接",iconsrc:require('@/assets/imgs/public/jtjs.png') }
         ],
 
         //集团业务
         product: [
-          { path: "/", title: "灏景地产" },
-          { path: "/lease", title: "写字楼租赁" },
-          { path: "/residence", title: "住宅租赁" }
+          { path: "/", title: "灏景地产",iconsrc:require('@/assets/imgs/public/yjdc.png') },
+          { path: "/lease", title: "写字楼租赁",iconsrc:require('@/assets/imgs/public/xzlzl.png') },
+          { path: "/residence", title: "住宅租赁",iconsrc:require('@/assets/imgs/public/zzzl.png') }
         ],
 
         //社区
         community: [
-          { path: "/community/public_good", title: "公益事业" },
-          { path: "/category/activity", title: "社区活动" }
+          { path: "/community/public_good", title: "公益事业",iconsrc:require('@/assets/imgs/public/gysy.png') },
+          { path: "/category/activity", title: "社区活动",iconsrc:require('@/assets/imgs/public/sqhd.png') }
         ]
       }
       // mounted(){
@@ -180,7 +198,19 @@ export default {
       color: #272727;
     }
   }
-}
+  .nav_content{
+    img{
+      display: block;
+      margin:0 auto;
+    }
+    p{
+      margin:0;
+      padding:0;
+      line-height: 1.2;
+      display: inline-block;
+    }
+  }
+
 .nav_div:hover {
   background: rgba(255, 255, 255, 0.7);
 }
@@ -197,28 +227,44 @@ export default {
 .nav_list div:after {
   content: "";
   display: inline-block;
-  width: 6px;
-  height: 6px;
-  background-color: #ffce39;
-  margin: 0 10px;
+  width: 9px;
+  height: 9px;
+  background-color: #91432d;
   border-radius: 6px;
-  position: relative;
-  top: -2px;
+  position: absolute;
+  bottom: 8px;
   cursor: auto;
+  right: -40px;
 }
 .nav_list {
   justify-content: center;
   -webkit-justify-content: center;
   -webkit-box-pack: justify;
 }
-.nav_list div:last-of-type:after {
-  content: "";
-  display: none;
+.nav_list div:last-of-type{
+  margin-right:0;
+  &:after {
+    content: "";
+    display: none;
+  }
 }
-.nav_list div {
-  text-align: center;
-  cursor: pointer;
-}
+.nav_list{
+  p{
+    font-size:18px;
+  }
+    div {
+        text-align: center;
+        cursor: pointer;
+        position:relative;
+        margin-right:80px;
+        img{
+          display:block;
+          margin:0 auto 8px;
+
+        }
+      }
+
+} 
 .nav_tit {
   text-align: center;
   font-weight: 800;
@@ -265,5 +311,6 @@ export default {
 }
 a{
   color:#000;
+}
 }
 </style>

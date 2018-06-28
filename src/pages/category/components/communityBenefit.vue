@@ -53,7 +53,7 @@ const comHeader = () => import("@/pages/components/header.vue");
 const comBreadCrumb = () => import("@/pages/components/breadcrumb.vue");
 import "@/assets/plugin/TweenMax.min.js";
 import "@/assets/js/index.js";
-import "@/assets/js/benefit.js";
+import move from "@/assets/js/benefit.js";
 import "@/assets/public/js/public.js";
 export default {
     data() {
@@ -79,6 +79,7 @@ export default {
             that.number = 200;
             that.juankuanNum = 8625.60;
         }, 1000);
+        move()
     },
     computed:{
     },
