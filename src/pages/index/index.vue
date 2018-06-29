@@ -56,6 +56,8 @@ export default {
     };
   },
   mounted() {
+    // console.log('正在监听');
+    
     window.addEventListener('scroll',this.handleScroll)
   },
   methods: {
@@ -63,6 +65,7 @@ export default {
     handleScroll(){
       var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
       if(scrollTop > 1848.6){
+        // console.log('index')
        imp.style.left = 0;
        imp.style.opacity = 1;
        inforimg.style.opacity = 1;
@@ -72,6 +75,12 @@ export default {
     }
   },
   created(){
+    
+  },
+  beforeDestroy(){
+    // console.log('移除监听');
+    
+    window.removeEventListener('scroll',this.handleScroll)
   },
   computed: {},
   watch: {},

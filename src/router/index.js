@@ -38,5 +38,6 @@ mainRouter.beforeEach((to, from, next) => {
   }
   next()
 })
+
 mainRouter.afterEach(transition => { })
 export default mainRouter

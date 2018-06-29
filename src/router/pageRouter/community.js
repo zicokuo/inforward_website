@@ -18,8 +18,7 @@ const pageRouter = {
     // name: 'group benefit',
     component: pageCateBenefit,
     meta: {
-      title: '公益事业',
-      keepAlive: true
+      title: '公益事业'
     }
   }, {
     //  公益事业
@@ -27,8 +26,8 @@ const pageRouter = {
     // name: 'group benefit',
     component: pageCateBenefit,
     meta: {
-      title: '公益事业',
-      keepAlive: true
+      title: '公益事业'
+    
     }
   }]
 }

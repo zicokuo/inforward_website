@@ -1,7 +1,11 @@
 
 <template>
   <div id="pageFooter" class="section">
-    
+    <div v-on:click="uptop" :style="{display:isBlock}" :class="[isDown ? classData.jackInTheBox : classData.fadeOutUp, classData.animated,classData.upbtn]">
+      <img src="@/assets/imgs/public/top.png" alt="">
+
+    </div>
+
     <mu-flexbox class="footerSection" :gutter="120">
       <!-- 左侧栏目 -->
       <mu-flexbox-item>
@@ -118,18 +122,68 @@ export default {
       centerFooterContents: centerFooterContents,
       copyRight: copyRight,
       footerLinks: footerLinks,
-      telImg:require('@/assets/img/relation.png')
+      isBlock: "none",
+      isDown:true,
+      classData:{
+        jackInTheBox:'jackInTheBox',
+        fadeOutUp:'fadeOutUp',
+        animated:'animated',
+        upbtn:'upbtn'
+      },
+      telImg: require("@/assets/img/relation.png")
     };
+  },
+  mounted() {
+    let that = this;
+    window.addEventListener("scroll", function() {
+      let distance =
+        document.documentElement.scrollTop || document.body.scrollTop;
+
+      if(parseInt(distance) >= 1100){
+        that.isBlock = "block"
+        that.isDown = true
+      }else{
+        // that.isBlock = "none"
+        that.isDown = false
+      }
+    });
+  },
+  methods: {
+    uptop: function() {
+      let distance =
+        document.documentElement.scrollTop || document.body.scrollTop;
+      let step = distance / 50;
+      if (distance != 0) {
+        let distInter = setInterval(function() {
+          distance -= step;
+          document.documentElement.scrollTop = distance;
+          document.body.scrollTop = distance;
+          if (distance <= 0) {
+            clearInterval(distInter);
+          }
+        }, 10);
+      } else {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+        window.pageYOffset = 0;
+      }
+    }
   }
 };
 </script>
 
 <style lang="scss">
-
 #pageFooter {
   background: white;
   margin-top: 4em;
-
+  & .upbtn{
+        position: fixed;
+    right: 60px;
+    bottom: 60px;
+    cursor: pointer;
+    display: block;
+    z-index: 6;
+  }
   & .footerSection {
     padding: 2em 0.5em;
     max-width: 1500px;

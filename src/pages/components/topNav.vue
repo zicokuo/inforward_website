@@ -1,5 +1,5 @@
 <template>
-  <div id="topNav">
+  <div id="topNav" v-on:mouseleave="show = false">
     <!-- 企业logo -->
     <mu-flexbox class="topNav">
       <mu-flexbox-item class="inforward-logo">
@@ -46,8 +46,8 @@
           <mu-flexbox>
             <mu-flexbox-item class="nav_tit" style="margin-bottom:40px;">
               <a href="/">
-              <img :src="require('@/assets/imgs/public/home.png')" alt=""/>
-              <p>官网主页</p>
+                <img :src="require('@/assets/imgs/public/home.png')" alt="" />
+                <p>官网主页</p>
               </a>
             </mu-flexbox-item>
           </mu-flexbox>
@@ -58,35 +58,35 @@
             </mu-flexbox-item>
           </mu-flexbox>
           <mu-flexbox class="nav_list" align="center;" style="margin-bottom:28px;">
-            
+
             <router-link v-for="(index,oi) in datalist.stepInforward" :key="oi" :to="index.path" tag="div" replace>
               <img :src="datalist.stepInforward[oi].iconsrc" alt="" />
               <p>{{index.title}}</p>
-              
-              </router-link>
+
+            </router-link>
           </mu-flexbox>
           <mu-flexbox>
             <mu-flexbox-item class="nav_tit">
               <img :src="require('@/assets/imgs/public/our.png')" alt="" />
               <p>集团项目产品</p>
-              
+
             </mu-flexbox-item>
           </mu-flexbox>
           <mu-flexbox>
-   
+
             <mu-flexbox class="nav_list" style="margin-bottom:25px;">
               <router-link v-for="(index,oi) in datalist.product" :key="oi" :to="index.path" tag="div" replace>
                 <img :src="datalist.product[oi].iconsrc" alt="" />
                 <p>{{index.title}}</p>
-                
+
               </router-link>
             </mu-flexbox>
-       
+
           </mu-flexbox>
           <mu-flexbox>
             <mu-flexbox-item class="nav_tit">
               <img :src="require('@/assets/imgs/public/community.png')" alt="">
-              
+
               <p>社区</p>
             </mu-flexbox-item>
           </mu-flexbox>
@@ -97,7 +97,7 @@
               <router-link v-for="(index,oi) in datalist.community" :key="oi" :to="index.path" tag="div" replace>
                 <img :src="index.iconsrc" alt="" />
                 <p>{{index.title}}</p>
-                
+
               </router-link>
             </mu-flexbox>
             <mu-flexbox></mu-flexbox>
@@ -144,40 +144,78 @@ export default {
     return {
       rightNavs: RightNavs,
       show: false,
-      
+
       datalist: {
         //集团介绍
         stepInforward: [
-          { path: "/inforward/partner", title: "集团介绍",iconsrc:require('@/assets/imgs/public/jtjs.png') },
-          { path: "/inforward/introduce", title: "客户展示&合作伙伴",iconsrc:require('@/assets/imgs/public/khzs.png') },
-          { path: "/category/company_news", title: "新闻中心",iconsrc:require('@/assets/imgs/public/xwzx.png') },
+          {
+            path: "/inforward/partner",
+            title: "集团介绍",
+            iconsrc: require("@/assets/imgs/public/jtjs.png")
+          },
+          {
+            path: "/inforward/introduce",
+            title: "客户展示&合作伙伴",
+            iconsrc: require("@/assets/imgs/public/khzs.png")
+          },
+          {
+            path: "/category/company_news",
+            title: "新闻中心",
+            iconsrc: require("@/assets/imgs/public/xwzx.png")
+          },
           // { path: "/", title: "合作伙伴",iconsrc:require('@/assets/imgs/public/jtjs.png') },
-          { path: "/inforward/recruit", title: "企业招聘&友情链接",iconsrc:require('@/assets/imgs/public/qyzp.png') },
+          {
+            path: "/inforward/recruit",
+            title: "企业招聘&友情链接",
+            iconsrc: require("@/assets/imgs/public/qyzp.png")
+          }
           // { path: "/", title: "友情链接",iconsrc:require('@/assets/imgs/public/jtjs.png') }
         ],
 
         //集团业务
         product: [
-          { path: "/", title: "灏景地产",iconsrc:require('@/assets/imgs/public/yjdc.png') },
-          { path: "/lease", title: "写字楼租赁",iconsrc:require('@/assets/imgs/public/xzlzl.png') },
-          { path: "/residence", title: "住宅租赁",iconsrc:require('@/assets/imgs/public/zzzl.png') }
+          {
+            path: "/",
+            title: "灏景地产",
+            iconsrc: require("@/assets/imgs/public/yjdc.png")
+          },
+          {
+            path: "/lease",
+            title: "写字楼租赁",
+            iconsrc: require("@/assets/imgs/public/xzlzl.png")
+          },
+          {
+            path: "/residence",
+            title: "住宅租赁",
+            iconsrc: require("@/assets/imgs/public/zzzl.png")
+          }
         ],
 
         //社区
         community: [
-          { path: "/community/public_good", title: "公益事业",iconsrc:require('@/assets/imgs/public/gysy.png') },
-          { path: "/category/activity", title: "社区活动",iconsrc:require('@/assets/imgs/public/sqhd.png') }
+          {
+            path: "/community/public_good",
+            title: "公益事业",
+            iconsrc: require("@/assets/imgs/public/gysy.png")
+          },
+          {
+            path: "/category/activity",
+            title: "社区活动",
+            iconsrc: require("@/assets/imgs/public/sqhd.png")
+          }
         ]
       }
-      // mounted(){
-      //   window.addEventListener('scroll',this.handleScroll)
-      // },
-      // methods:{
-      //   handleScroll:function(){
-      //     console.log(1)
-      //   }
-      // }
     };
+  },
+  methods: {},
+  mounted() {
+    // console.log(this.show);
+  },
+
+  beforeDestroy() {
+    console.log(this.show);
+
+    // window.removeEventListener('scroll',this.handleScroll)
   }
 };
 </script>
@@ -198,119 +236,117 @@ export default {
       color: #272727;
     }
   }
-  .nav_content{
-    img{
+  .nav_content {
+    img {
       display: block;
-      margin:0 auto;
+      margin: 0 auto;
     }
-    p{
-      margin:0;
-      padding:0;
+    p {
+      margin: 0;
+      padding: 0;
       line-height: 1.2;
       display: inline-block;
     }
   }
 
-.nav_div:hover {
-  background: rgba(255, 255, 255, 0.7);
-}
-.topNav {
-  padding-top: 0.5em;
-  display: flex;
-  position: relative;
-  & .nav {
-    &-icon {
-      width: 1.5em;
+  .nav_div:hover {
+    background: rgba(255, 255, 255, 0.7);
+  }
+  .topNav {
+    padding-top: 0.5em;
+    display: flex;
+    position: relative;
+    & .nav {
+      &-icon {
+        width: 1.5em;
+      }
     }
   }
-}
-.nav_list div:after {
-  content: "";
-  display: inline-block;
-  width: 9px;
-  height: 9px;
-  background-color: #91432d;
-  border-radius: 6px;
-  position: absolute;
-  bottom: 8px;
-  cursor: auto;
-  right: -40px;
-}
-.nav_list {
-  justify-content: center;
-  -webkit-justify-content: center;
-  -webkit-box-pack: justify;
-}
-.nav_list div:last-of-type{
-  margin-right:0;
-  &:after {
+  .nav_list div:after {
     content: "";
-    display: none;
+    display: inline-block;
+    width: 9px;
+    height: 9px;
+    background-color: #91432d;
+    border-radius: 6px;
+    position: absolute;
+    bottom: 8px;
+    cursor: auto;
+    right: -40px;
   }
-}
-.nav_list{
-  p{
-    font-size:18px;
+  .nav_list {
+    justify-content: center;
+    -webkit-justify-content: center;
+    -webkit-box-pack: justify;
   }
+  .nav_list div:last-of-type {
+    margin-right: 0;
+    &:after {
+      content: "";
+      display: none;
+    }
+  }
+  .nav_list {
+    p {
+      font-size: 18px;
+    }
     div {
-        text-align: center;
-        cursor: pointer;
-        position:relative;
-        margin-right:80px;
-        img{
-          display:block;
-          margin:0 auto 8px;
-
-        }
+      text-align: center;
+      cursor: pointer;
+      position: relative;
+      margin-right: 80px;
+      img {
+        display: block;
+        margin: 0 auto 8px;
       }
-
-} 
-.nav_tit {
-  text-align: center;
-  font-weight: 800;
-  font-size: 26px;
-  font-family: adobebold;
-  line-height: 1;
-  margin-bottom: 13px;
-}
-#topNav {
-  color: #fff;
-  transition: all 1s;
-}
-.hengxian_rotate img:nth-child(1),
-.hengxian_rotate img:nth-child(4) {
-  opacity: 0;
-}
-.hengxian_rotate img:nth-child(2) {
-  transform: rotate(45deg);
-}
-.hengxian_rotate img:nth-child(3) {
-  transform: rotate(-45deg);
-}
-.hengxian_normal img {
-  transform: rotate(0deg);
-  opacity: 1;
-}
-.hengxian {
-  display: inline-block;
-}
-.hengxian img {
-  display: block;
-  transition: all 0.2s ease-in-out;
-}
-.hengxian img:nth-of-type(2) {
-  position: absolute;
-}
-.nav_div {
-  background: rgba(255, 255, 255, 0.1);
-}
-.nav_div {
-  position: absolute;
-  width: 100%;
-  transition: all 1s;
-}
-a{
-  color:#000;
-}
+    }
+  }
+  .nav_tit {
+    text-align: center;
+    font-weight: 800;
+    font-size: 26px;
+    font-family: adobebold;
+    line-height: 1;
+    margin-bottom: 13px;
+  }
+  #topNav {
+    color: #fff;
+    transition: all 1s;
+  }
+  .hengxian_rotate img:nth-child(1),
+  .hengxian_rotate img:nth-child(4) {
+    opacity: 0;
+  }
+  .hengxian_rotate img:nth-child(2) {
+    transform: rotate(45deg);
+  }
+  .hengxian_rotate img:nth-child(3) {
+    transform: rotate(-45deg);
+  }
+  .hengxian_normal img {
+    transform: rotate(0deg);
+    opacity: 1;
+  }
+  .hengxian {
+    display: inline-block;
+  }
+  .hengxian img {
+    display: block;
+    transition: all 0.2s ease-in-out;
+  }
+  .hengxian img:nth-of-type(2) {
+    position: absolute;
+  }
+  .nav_div {
+    background: rgba(255, 255, 255, 0.1);
+  }
+  .nav_div {
+    position: absolute;
+    width: 100%;
+    transition: all 1s;
+  }
+  a {
+    color: #000;
+  }
 }
 </style>

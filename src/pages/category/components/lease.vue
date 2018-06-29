@@ -173,7 +173,7 @@ export default {
   },
   methods: {
       look:function(){
-          alert(1)
+          alert('敬请期待！')
       }
   }
 
