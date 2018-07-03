@@ -12,7 +12,7 @@
         </div> -->
         <com-bread style="text-align:left;"></com-bread>
         <div class="tit">
-          <h2>我们是谁?</h2>
+          <h2>你有才，我有财，等你来</h2>
         </div>
         <section>
           <p class="section_p">国内租赁行业的翘首，近两年成长最快的租赁平台。高速增长的集团业务公司。<br>其实我们只是一群想做点事情的人，一群有着相同价值观的人，一群坚信能创造伟大的人。</p>

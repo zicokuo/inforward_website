@@ -6,18 +6,18 @@
       <!-- slides -->
       
         <com-screen-index></com-screen-index>
-    
+      <div>
         <com-screen-aboutus></com-screen-aboutus>
-      
-      
         <com-screen-projects></com-screen-projects>
-     <swiper :options="swiperOption" ref="screenPageSwiper" @someSwiperEvent="handleSwiperScroll">
+      </div>
+
+     <!-- <swiper :options="swiperOption" ref="screenPageSwiper" @someSwiperEvent="handleSwiperScroll">
       <swiper-slide>
         <com-screen-map></com-screen-map>
-      </swiper-slide>
-      <div class="swiper-scrollbar" slot="scrollbar"></div>
+      </swiper-slide> -->
+      <!-- <div class="swiper-scrollbar" slot="scrollbar"></div> -->
       <!-- Optional controls -->
-    </swiper>
+    <!-- </swiper> -->
         <com-footer></com-footer>
 
   </div>
@@ -29,7 +29,7 @@ let comTopNav = () => import("@/pages/components/topNav.vue");
 let comScreenIndex = () => import("./components/screenIndex.vue");
 let comScreenAboutUs = () => import("./components/screenAboutUs.vue");
 let comScreenProjects = () => import("./components/screenProjects.vue");
-let comScreenMap = () => import("./components/screenMap.vue");
+// let comScreenMap = () => import("./components/screenMap.vue");
 let comFooter = () => import("@/pages/components/footer.vue");
 
 import { swiper, swiperSlide } from "vue-awesome-swiper";
@@ -91,7 +91,7 @@ export default {
     "com-screen-index": comScreenIndex,
     "com-screen-aboutus": comScreenAboutUs,
     "com-screen-projects": comScreenProjects,
-    "com-screen-map": comScreenMap,
+    // "com-screen-map": comScreenMap,
     "com-footer": comFooter
   }
 };
@@ -99,5 +99,7 @@ export default {
 
 <style lang="scss">
 
-
+body{
+  // min-width: 1250px;
+}
 </style>

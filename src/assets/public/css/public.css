@@ -1,10 +1,6 @@
 .clearfloat:after{display:block;clear:both;content:"";visibility:hidden;height:0}
 .clearfloat{zoom:1}
-p{
-    margin:0;
-	padding:0;
-	line-height: 1.15;
-}
+p{margin:0;padding:0;line-height: 1.15;}
 ul,dt,ol{margin:0;padding:0;}
 ul li,dt dd,ol li{list-style: none;margin:0;padding:0;}
 a{text-decoration:none;}
@@ -12,7 +8,7 @@ a{text-decoration:none;}
 
 /*页头*/
 body{
-	min-width: 1400px;
+	min-width: 1250px;
 	margin:0 auto;
 	padding:0;
 	box-sizing:border-box;
@@ -79,7 +75,9 @@ header{
     width: 152px;
     overflow: hidden;
     border-radius: 100px;}
-.quan{background:url("../../img/daojishi.png")center no-repeat;    width: 152px;
+.quan{
+	/* background:url("../../img/daojishi.png")center no-repeat;     */
+	width: 152px;
     height: 151px;
     position: relative;
     z-index: 2;}

@@ -2,12 +2,12 @@
   <div id="topNav" v-on:mouseleave="show = false">
     <!-- 企业logo -->
     <mu-flexbox class="topNav">
-      <mu-flexbox-item class="inforward-logo">
+      <mu-flexbox-item class="inforward-logo" style="padding-left:100px;">
         <mu-flexbox :gutter="100">
-          <mu-flexbox-item>
+          <mu-flexbox-item class="logoicon">
             <img class="adaptive-imgs" src="@/assets/imgs/logo.png" />
           </mu-flexbox-item>
-          <mu-flexbox-item>
+          <mu-flexbox-item class="hengxianbig">
             <!-- <img class="adaptive-imgs" src="@/assets/imgs/menu.png" v-on:click="show = !show" /> -->
             <div class="hengxian" v-on:click="show = !show">
               <transition name="custom-classes-transition">
@@ -40,7 +40,7 @@
       </mu-flexbox-item>
     </mu-flexbox>
 
-    <transition name="custom-classes-transition" enter-active-class="animated bounceInDown" leave-active-class="animated bounceOutUp">
+    <transition name="custom-classes-transition" enter-active-class="animated slideInDown" leave-active-class="animated slideOutUp">
       <div v-if="show" class="nav_div" id="nav_div">
         <div class="nav_content">
           <mu-flexbox>
@@ -112,6 +112,18 @@
 
 <script>
 let RightNavs = [
+  {
+    label: null,
+    imgSrc: require("@/assets/imgs/xzl_btn.png"),
+    tips: "写字楼租赁",
+    url: "/inforward/introduce"
+  },
+  {
+    label: null,
+    imgSrc: require("@/assets/imgs/home_btn.png"),
+    tips: "房屋租赁",
+    url: "/inforward/introduce"
+  },
   {
     label: null,
     imgSrc: require("@/assets/imgs/search_btn.png"),
@@ -329,6 +341,11 @@ export default {
   }
   .hengxian {
     display: inline-block;
+    
+  }
+  .logoicon{
+    display: flex;
+    justify-content: center;
   }
   .hengxian img {
     display: block;

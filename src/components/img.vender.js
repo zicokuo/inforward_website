@@ -30,6 +30,7 @@ let autoFixPosition = function (imgs, originWidth = originW, originHeight = orig
   }
 
   imgs.map((i, e, a) => {
+    return
     let elm = $(e)
     let eps = elm.position()
     let enl = eps.left * winWidth / originWidth

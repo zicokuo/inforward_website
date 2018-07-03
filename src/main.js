@@ -14,7 +14,7 @@ import '../static/material-fonts/material-icons.css'
 import '../static/font/newfont.css'
 import '@/assets/scss/main.scss'
 
-import ImageHelper from '@/components/img.vender.js'
+// import ImageHelper from '@/components/img.vender.js'
 //  windowƒ
 import ApiSimulation from '@/components/apiSimulation.js'
 import Helper from '@/components/helper'
@@ -35,4 +35,4 @@ new Vue({
   template: '<App/>'
 })
 
-window.$imageHelper = ImageHelper
+// window.$imageHelper = ImageHelper

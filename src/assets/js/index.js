@@ -1,4 +1,4 @@
-
+//倒计时
 window.onload = function () {
     var show = document.getElementsByClassName('show');
     var djs = 90, add = 1;

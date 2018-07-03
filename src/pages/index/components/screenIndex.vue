@@ -16,7 +16,7 @@
                 <div class="nav_right">
                     <div class="nav_right_yuan">
                         <div class="loading">
-                            <div class="quan" :style="'background:url('+djsbg+')center no-repeat;'">
+                            <div class="quan">
                             </div>
                             <div>
                                 <div class="show_01 show" :style="'background-image:url('+blbg+')'"></div>
@@ -37,7 +37,7 @@
                 </div>
             
     </div>
-    <div class="absolute adaptive-items" style="top:895px;left:840px">
+    <div class="absolute adaptive-items" style="bottom: 125px;left: 0;right: 0;">
       <div class="title">Welcome to Inforward</div>
       <div style="padding-top:2em">
         <img src="@/assets/img/downBtn.png" />
@@ -127,20 +127,20 @@ export default {
   },
   mounted() {
     this.$nextTick(() => {
-      let windowInit = function() {
-        window.$imageHelper.autoFixImage($(".adaptive-imgs"));
-        window.$imageHelper.autoFixPosition($(".adaptive-items"));
-      };
+      // let windowInit = function() {
+      //   window.$imageHelper.autoFixImage($(".adaptive-imgs"));
+      //   window.$imageHelper.autoFixPosition($(".adaptive-items"));
+      // };
       $(function() {
         // var scene = $("#screenIndex .parallaxLayer").get(0);
         // var parallaxInstance = new Parallax(scene);
         $("#screenIndex .parallaxLayer").height(
           document.documentElement.clientHeight
         );
-        windowInit();
-        $(window).resize(function() {
-          windowInit();
-        });
+        // windowInit();
+        // $(window).resize(function() {
+        //   windowInit();
+        // });
       });
     });
     
@@ -234,10 +234,11 @@ body{
     }
   }
   ul{
-    width: 1200px;
+    width: 1280px;
     display:flex;
     justify-content:space-between;
     margin:0 auto;
+    padding-left:0;
     li{
       list-style:none;
       flex-direction: row;

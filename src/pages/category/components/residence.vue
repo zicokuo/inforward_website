@@ -36,7 +36,7 @@
                     <img src="@/assets/img/wnjx.png" alt="">
                     <a href="javascript:;"><img src="@/assets/img/gdfy.png" alt=""></a>
                 </div>
-                <ul class="content_list">
+                <ul class="content_list" id="content_list">
                     
                     <li v-for="(itemw,index) in contentList" :key="index">
                         <div>
@@ -53,8 +53,8 @@
                     <img src="@/assets/img/xpqh.png" alt=""><br><br>
                     <img src="@/assets/img/zqtb.png" alt="">
                 </div>
-                <ul class="content_ul">
-                    <li v-for="(item,index) in list" :key="index">
+                <ul class="content_ul" id="content_ul">
+                    <li v-for="(item,index) in list" :key="index" class="content_u_li zhezhao">
                         <img :src="item.url" alt="">
                         <p>{{ item.title }}</p>
                     </li>
@@ -116,21 +116,28 @@ export default {
         }
     },
     methods:{
-        headerLiClick:(index) => {
+        headerLiClick:(index) => {//搜索框
             let triangle = document.getElementsByClassName('triangle')[0]
             triangle.style.left = (index*87)+55+'px'
             
         },
         handleScroll:() => {
             let scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
-            let zhezhao1 = document.getElementsByClassName('zhezhao')
-           for(let i=0;i<zhezhao1.length;i++){
-               if(scrollTop > 860){
-                   zhezhao1[i].className = 'zhezhao delzhezhao'
-               }else{
-                   zhezhao1[i].className = 'zhezhao'
-               }
-               
+            
+            let content_list = document.getElementById('content_list')
+            
+            let content_ul = document.getElementById('content_ul')
+            let shadeArr  = content_list.getElementsByClassName('zhezhao')
+            let shadeArr2  = content_ul.getElementsByClassName('zhezhao')
+            // for(var i in shadeArr){
+            //     scrollTop >= content_list.offsetTop-510 ? shadeArr[i].className = 'zhezhao delzhezhao' : shadeArr[i].className = 'zhezhao'
+            // }
+           for(let i=0;i<shadeArr.length;i++){
+               scrollTop > content_list.offsetTop-510 ? shadeArr[i].className = 'zhezhao delzhezhao' : shadeArr[i].className = 'zhezhao'            
+           }
+           for(let i = 0;i<shadeArr2.length;i++){
+                scrollTop > content_ul.offsetTop-510 ? shadeArr2[i].className = 'zhezhao delzhezhao' : shadeArr2[i].className = 'zhezhao'
+                   
            }
             
             // scrollTop > 860 ? zhezhao.className += ' delzhezhao' : '';
